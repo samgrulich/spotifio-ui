@@ -14,13 +14,16 @@ const Head = () => (
 export default function Menu()
 {
   return (
-    <nav class={tw`font-bold`}>
+    <div class={tw('w-screen mb-3 py-3 bg-black flex justify-center')}>
+    <nav class={tw('container w-1/3')}>
       <Head />
-      <ul class="nabar-nav">
+      <h1 class={tw('p-1 bg-gradient-to-r from-green-400 to-indigo-500')}> <a class={tw('text-black')} href="/">Spotifio</a></h1>
+      <ul class={tw('flex font-bold space-x-5 float-right')}>
         <MenuButton name="Home" href="/" />
-        <MenuButton name="P-lists" href="/playlists" />
+        <MenuButton name="Plists" href="/playlists" />
         <MenuButton name="Music" href="/music" />
       </ul>
     </nav>
+    </div>
   );
 }

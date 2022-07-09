@@ -1,16 +1,18 @@
 /** @jsx h */
 import { h } from "preact";
 import { tw } from "@twind";
-import Menu from "../islands/Menu.tsx";
+import Menu from "../components/Menu.tsx";
 
 export default function Music()
 {
   return (
-    <div class={tw`page p-4 mx-auto max-w-screen-md`}>
+    <div class={tw('')}>
       <Menu />
-      
-      <h1>Music</h1>
-      <p>Listen to music with friends only @here. ;-)</p>
+
+      <main>
+        <h1>Music</h1>
+        <p>Listen to music with friends only @here. ;-)</p>
+      </main>
     </div>
   );
 }
