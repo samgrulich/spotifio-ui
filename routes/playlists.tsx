@@ -3,6 +3,8 @@ import { h } from "preact";
 import { tw, apply } from "@twind";
 import Menu from "../components/Menu.tsx";
 
+import { DB } from "sqlite3";
+
 const trackerStyle = apply('w-1/2 m-3 p-3 bg-black h-96')
 
 export default function Playlists()

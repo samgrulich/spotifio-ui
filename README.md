@@ -1,4 +1,6 @@
-# fresh project
+# Spotifio (fresh)
+
+Web app for tracking your spotify playlists
 
 ### Usage
 

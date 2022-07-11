@@ -10,6 +10,8 @@ import manifest from "./fresh.gen.ts";
 import { config, setup } from "@twind";
 import { virtualSheet } from "twind/sheets";
 
+import "./modules/dbinit.ts";
+
 const sheet = virtualSheet();
 sheet.reset();
 setup({ ...config, sheet });
