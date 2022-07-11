@@ -1,6 +1,8 @@
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { apply, theme, extend, Configuration, setup } from "twind";
+import { Main } from "./styles.ts";
 export * from "twind";
+
 export const config: Configuration = {
   preflight: {
     h1: apply('font-bold inline'),
@@ -23,7 +25,7 @@ export const config: Configuration = {
     // ],
   },
   mode: "warn", // silent, warn, strict
-  hash: true,
+  hash: false,
   theme: {
     extend:{
       colors:
@@ -34,6 +36,7 @@ export const config: Configuration = {
   },
   darkMode: "class",
   // sheet: voidSheed,
+  plugins: Main,
 };
 
 if (IS_BROWSER) setup(config);
