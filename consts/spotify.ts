@@ -1,1 +1,1 @@
-export const scopes = "user-read-private user-read-email playlist-modify-private playlist-read-private";
+export const SCOPES = "user-read-private user-read-email playlist-modify-private playlist-read-private";
