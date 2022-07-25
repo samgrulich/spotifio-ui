@@ -2,10 +2,11 @@ import { h } from "preact";
 import { tw } from "@twind";
 import { Handlers, HandlerContext } from "$fresh/server.ts";
 import "dotenv/load.ts";
-import { scopes } from "../../consts/spotify.ts";
+import { SCOPES } from "../../consts/spotify.ts";
 
 export const handler: Handlers = {
-    async GET(req: Request, _ctx: HandlerContext): Response
+    // deno-lint-ignore require-await
+    async GET(req: Request, _ctx: HandlerContext): Promise<Response>
     {
         const url = new URL(req.url);
         const state = crypto.randomUUID().replaceAll("-", "").substring(0, 16);
@@ -13,7 +14,7 @@ export const handler: Handlers = {
             "client_id": Deno.env.get("CLIENT_ID"),
             "redirect_uri": `${url.origin}/auth/callback`,
             "response_type": "code",
-            "scope": scopes,
+            "scope": SCOPES,
             "state": state,
         }
 
