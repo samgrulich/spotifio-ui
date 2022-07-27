@@ -17,17 +17,21 @@ setup({ ...config, sheet });
 // rewrite root path in import map
 const importMapPath = "./import_map.json";
 const importMapData = JSON.parse(await Deno.readTextFile(importMapPath));
-importMapData["imports"]["@root"] = Deno.cwd();
-console.log(JSON.stringify(importMapData, null, "\t"));
-Deno.writeTextFile(importMapPath, importMapData);
+const currDir = Deno.cwd() + "/";
+if (importMapData["imports"]["@root/"] != currDir)
+{
+    importMapData["imports"]["@root/"] = Deno.cwd() + "/";
+    const importMapString = JSON.stringify(importMapData, null, "\t");
+    Deno.writeTextFile(importMapPath, importMapString);
+}
 
 function render(ctx: RenderContext, render: InnerRenderFunction) {
-  const snapshot = ctx.state.get("twind") as unknown[] | null;
-  sheet.reset(snapshot || undefined);
-  render();
-  ctx.styles.splice(0, ctx.styles.length, ...(sheet).target);
-  const newSnapshot = sheet.reset();
-  ctx.state.set("twind", newSnapshot);
+    const snapshot = ctx.state.get("twind") as unknown[] | null;
+    sheet.reset(snapshot || undefined);
+    render();
+    ctx.styles.splice(0, ctx.styles.length, ...(sheet).target);
+    const newSnapshot = sheet.reset();
+    ctx.state.set("twind", newSnapshot);
 }
 
 await start(manifest, { render });
