@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from "preact";
 import { tw } from "@twind";
-import Menu from "@root/components/Menu.tsx";
+import Menu from "../components/Menu.tsx";
 
 export default function Home() {
   if(!localStorage.getItem("x"))  

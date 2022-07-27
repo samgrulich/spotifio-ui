@@ -2,7 +2,7 @@ import { h } from "preact";
 import { tw } from "@twind";
 import { Handlers, HandlerContext } from "$fresh/server.ts";
 import "dotenv/load.ts";
-import { SCOPES } from "@root/consts/spotify.ts";
+import { SCOPES } from "../../consts/spotify.ts";
 
 export const handler: Handlers = {
     // deno-lint-ignore require-await

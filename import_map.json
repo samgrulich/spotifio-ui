@@ -8,8 +8,6 @@
 		"twind": "https://esm.sh/twind@0.16.17",
 		"twind/": "https://esm.sh/twind@0.16.17/",
 		"sqlite3": "https://deno.land/x/sqlite@v3.4.0/mod.ts",
-		"dotenv/": "https://deno.land/x/dotenv@v3.2.0/",
-		"@aws-sdk/": "https://cdn.skypack.dev/@aws-sdk/",
-		"@root/": "~/spotifio/"
+		"dotenv/": "https://deno.land/x/dotenv@v3.2.0/"
 	}
 }

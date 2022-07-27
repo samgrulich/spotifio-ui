@@ -14,17 +14,6 @@ const sheet = virtualSheet();
 sheet.reset();
 setup({ ...config, sheet });
 
-// rewrite root path in import map
-const importMapPath = "./import_map.json";
-const importMapData = JSON.parse(await Deno.readTextFile(importMapPath));
-const currDir = Deno.cwd() + "/";
-if (importMapData["imports"]["@root/"] != currDir)
-{
-    importMapData["imports"]["@root/"] = Deno.cwd() + "/";
-    const importMapString = JSON.stringify(importMapData, null, "\t");
-    Deno.writeTextFile(importMapPath, importMapString);
-}
-
 function render(ctx: RenderContext, render: InnerRenderFunction) {
     const snapshot = ctx.state.get("twind") as unknown[] | null;
     sheet.reset(snapshot || undefined);
