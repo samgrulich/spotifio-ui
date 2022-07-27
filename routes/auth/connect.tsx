@@ -11,7 +11,7 @@ export const handler: Handlers = {
         const url = new URL(req.url);
         const state = crypto.randomUUID().replaceAll("-", "").substring(0, 16);
         const data = {
-            "client_id": Deno.env.get("CLIENT_ID"),
+            "client_id": Deno.env.get("CLIENT_ID") || "",
             "redirect_uri": `${url.origin}/auth/callback`,
             "response_type": "code",
             "scope": SCOPES,
