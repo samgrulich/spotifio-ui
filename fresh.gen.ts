@@ -2,25 +2,31 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
-import * as $0 from "./routes/auth/callback.tsx";
-import * as $1 from "./routes/auth/connect.tsx";
-import * as $2 from "./routes/index.tsx";
-import * as $3 from "./routes/music.tsx";
-import * as $4 from "./routes/playlists.tsx";
-import * as $$0 from "./islands/Counter.tsx";
-import * as $$1 from "./islands/Test.tsx";
+import * as $0 from "./routes/_middleware.ts";
+import * as $1 from "./routes/auth/callback.tsx";
+import * as $2 from "./routes/auth/connect.tsx";
+import * as $3 from "./routes/index.tsx";
+import * as $4 from "./routes/music.tsx";
+import * as $5 from "./routes/playlists.tsx";
+import * as $$0 from "./islands/AutoLogger.tsx";
+import * as $$1 from "./islands/Counter.tsx";
+import * as $$2 from "./islands/Save.tsx";
+import * as $$3 from "./islands/Test.tsx";
 
 const manifest = {
   routes: {
-    "./routes/auth/callback.tsx": $0,
-    "./routes/auth/connect.tsx": $1,
-    "./routes/index.tsx": $2,
-    "./routes/music.tsx": $3,
-    "./routes/playlists.tsx": $4,
+    "./routes/_middleware.ts": $0,
+    "./routes/auth/callback.tsx": $1,
+    "./routes/auth/connect.tsx": $2,
+    "./routes/index.tsx": $3,
+    "./routes/music.tsx": $4,
+    "./routes/playlists.tsx": $5,
   },
   islands: {
-    "./islands/Counter.tsx": $$0,
-    "./islands/Test.tsx": $$1,
+    "./islands/AutoLogger.tsx": $$0,
+    "./islands/Counter.tsx": $$1,
+    "./islands/Save.tsx": $$2,
+    "./islands/Test.tsx": $$3,
   },
   baseUrl: import.meta.url,
 };

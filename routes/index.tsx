@@ -14,7 +14,7 @@ export default function Home() {
         <p>Welcome! Spotfio lets you track your spotify playlists and listen to music with friends</p>
       </main>
 
-      {/* <Redirect path="./music"/> */}
+      <Redirect path="./music"/>
     </div>
   );
 }

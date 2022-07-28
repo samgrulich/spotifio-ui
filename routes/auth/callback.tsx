@@ -3,6 +3,7 @@ import { h } from "preact";
 import { tw } from "@twind";
 import { PageProps, Handlers, HandlerContext } from "$fresh/server.ts";
 import { SPOTIFY_API_TOKEN, SPOTIFY_API_AUTH } from "../../consts/spotify.ts";
+import Save, { StorageType } from "../../islands/Save.tsx";
 
 
 interface Credentials 
@@ -72,12 +73,22 @@ export default function CallbackPage({ data }: PageProps<Credentials | SpotifyEr
       </div>
     );
   }
+  
+  const credentialsString = {
+    accessToken: data.accessToken, 
+    timeToLive: data.timeToLive.toString(), 
+    refreshToken: data.refreshToken
+  };
+  const logged = {"logged": "true"};
 
   return (
     <div>
-      You're in!
-      <span>{data.accessToken}</span>
+      You're in! <br />
+      <span>{data.accessToken}</span> <br />
       <span>{data.refreshToken}</span>
+      
+      <Save storage={StorageType.Session} data={credentialsString}/>
+      <Save storage={StorageType.Local} data={logged}/>
     </div>
   );
 }
