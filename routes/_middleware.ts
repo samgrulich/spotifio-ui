@@ -1,16 +1,15 @@
 import { MiddlewareHandlerContext } from "$fresh/server.ts";
 
 interface State {
-  data: string;
+  cookies: string;
 }
 
 export async function handler(
   req: Request,
   ctx: MiddlewareHandlerContext<State>,
 ) {
-  ctx.state.data = "myData";
+  // ctx.state.cookies = req.headers.get("cookie") || "";
   const resp = await ctx.next();
-  console.log("request", req);
   // resp.headers.set("server", "fresh server");
   return resp;
 }

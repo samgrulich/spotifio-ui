@@ -11,7 +11,7 @@ interface ButtonProps
 export default function MenuButton(props: ButtonProps)
 {
   const activity: string = (props.isActive) ? "active" : "";
-  const className: string = `nav-link ${activity}`; 
+  const className = `nav-link ${activity}`; 
 
   return (
     <li class="nav-item">
