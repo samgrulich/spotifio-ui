@@ -5,17 +5,28 @@ import { Handlers, HandlerContext, PageProps } from "$fresh/server.ts";
 import { Credentials } from "../modules/types.ts";
 import { splitCookies } from "../modules/functions.ts";
 import Menu from "../components/Menu.tsx";
-import Redirect from "../islands/Test.tsx";
+import { dbClient, ExecuteStatementCommand } from "../modules/db/init.ts";
 
 export const handler: Handlers = {
-  GET(req: Request, ctx: HandlerContext) {
+  async GET(req: Request, ctx: HandlerContext) {
     const rawCookies = req.headers.get("cookie");
-    const cookies = splitCookies(rawCookies); 
+    const strCookies = rawCookies || `sessionID=${crypto.randomUUID()}`;
+
+    const cookies = splitCookies(strCookies); 
     const credentials = {
-      sessionID: cookies["PHPSESSID"],
+      sessionID: cookies["sessionID"],
     };
 
-    return ctx.render(credentials);
+    const resp = await ctx.render(credentials);
+    if (rawCookies != strCookies)
+    {
+      // Create session in DB
+      
+
+      resp.headers.set("Set-Cookie", `${strCookies}; SameSite=Strict; Max-Age=${604800}`);
+    }
+
+    return resp;
   },
 };
 
