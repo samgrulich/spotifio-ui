@@ -3,7 +3,7 @@ import { h } from "preact";
 import { tw } from "@twind";
 import { PageProps, Handlers, HandlerContext } from "$fresh/server.ts";
 import { dbClient, ExecuteStatementCommand } from "../../modules/db/init.ts";
-import { SPOTIFY_API_TOKEN_URL, SPOTIFY_API_AUTH } from "../../consts/spotify.ts";
+import { SPOTIFY_API_TOKEN_URL, SPOTIFY_API_AUTH } from "../../consts/c_spotify.ts";
 import Save, { StorageType } from "../../islands/Save.tsx";
 
 
@@ -64,7 +64,11 @@ export const handler: Handlers<authCredentials | SpotifyError> = {
     // query database for user data
     // if new user
       // create new entry to the users table
+      // create new entry for all of his playlists
+      // create new entry for the scheduled snapshot
     // send the userid cookie back to client
+    // send userdata to store in session storage
+    // store the userid in localstorage with given session length
     // resp.headers.set("Set-Cookie", `${strCookies}; SameSite=Strict; Max-Age=${604800}`);
     
     return resp;

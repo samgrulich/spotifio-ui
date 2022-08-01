@@ -13,6 +13,11 @@ export default function Login({userID}: Credentials)
   {
     return (
       <a class={tw('inline')} href="/auth/connect">Logged</a>
+      /**
+       * Show
+       *  user name
+       *  user profile pic
+       */
     );
   }  
 
