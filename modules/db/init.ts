@@ -2,6 +2,7 @@ import { DynamoDBClient } from "@aws-sdk/client-dynamodb?dts";
 import { DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb?dts";
 
 export * from "@aws-sdk/client-dynamodb?dts";
+
 export const REGION = "eu-central-1"; // For example, "us-east-1".
 
 // Create an Amazon DynamoDB service client object.
