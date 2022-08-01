@@ -12,7 +12,7 @@ const Head = () => (
   </head>
 )
 
-export default function Menu(props: Credentials)
+export default function Menu({userID}: Credentials)
 {
   return (
     <div class={tw('w-screen mb-3 py-3 bg-black')}>
@@ -24,8 +24,8 @@ export default function Menu(props: Credentials)
         <MenuButton name="Plists" href="/playlists" isActive={false}/>
         <MenuButton name="Music" href="/music" isActive={false}/>
       </ul>
-      <a class={tw('inline')} href="/auth/connect">Login</a>
-      <Login sessionID={props.sessionID}></Login>
+      {/* <a class={tw('inline')} href="/auth/connect">Login</a> */}
+      <Login userID={userID}></Login>
     </nav>
     </div>
   );

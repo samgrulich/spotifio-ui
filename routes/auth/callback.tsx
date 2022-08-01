@@ -3,11 +3,11 @@ import { h } from "preact";
 import { tw } from "@twind";
 import { PageProps, Handlers, HandlerContext } from "$fresh/server.ts";
 import { dbClient, ExecuteStatementCommand } from "../../modules/db/init.ts";
-import { SPOTIFY_API_TOKEN, SPOTIFY_API_AUTH } from "../../consts/spotify.ts";
+import { SPOTIFY_API_TOKEN_URL, SPOTIFY_API_AUTH } from "../../consts/spotify.ts";
 import Save, { StorageType } from "../../islands/Save.tsx";
 
 
-interface Credentials 
+interface authCredentials 
 {
   disc: "credentials";
   accessToken: string;
@@ -22,8 +22,8 @@ interface SpotifyError
   msg: string;
 }
 
-export const handler: Handlers<Credentials | SpotifyError> = {
-  async GET(req: Request, ctx: HandlerContext<Credentials | SpotifyError>) {
+export const handler: Handlers<authCredentials | SpotifyError> = {
+  async GET(req: Request, ctx: HandlerContext<authCredentials | SpotifyError>) {
     const url = new URL(req.url);
     const params: URLSearchParams = url.searchParams;
     
@@ -40,7 +40,7 @@ export const handler: Handlers<Credentials | SpotifyError> = {
       redirect_uri: `${url.origin}/auth/callback`,
     };
 
-    const response = await fetch(SPOTIFY_API_TOKEN, {
+    const response = await fetch(SPOTIFY_API_TOKEN_URL, {
       method: "POST",
       cache: "no-cache",
       headers: {
@@ -51,17 +51,27 @@ export const handler: Handlers<Credentials | SpotifyError> = {
     });
 
     const respData = await response.json();
-    const credentials: Credentials = {
+    const credentials: authCredentials = {
       disc: "credentials",
       accessToken: respData["access_token"],
       timeToLive: respData["expires_in"],
       refreshToken: respData["refresh_token"],
     };
-    return ctx.render(credentials);
+
+    const resp = await ctx.render(credentials); 
+
+    // query spotify for user data
+    // query database for user data
+    // if new user
+      // create new entry to the users table
+    // send the userid cookie back to client
+    // resp.headers.set("Set-Cookie", `${strCookies}; SameSite=Strict; Max-Age=${604800}`);
+    
+    return resp;
   } 
 }
 
-export default function CallbackPage({ data }: PageProps<Credentials | SpotifyError>) {
+export default function CallbackPage({ data }: PageProps<authCredentials | SpotifyError>) {
   if (data.disc == "error")
   {
     return (

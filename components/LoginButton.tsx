@@ -5,13 +5,18 @@ import { tw } from "@twind";
 import { Credentials } from "../modules/types.ts";
 import { dbClient, ExecuteStatementCommand } from "../modules/db/init.ts";
 
-export default function Login(props: Credentials)
+export default function Login({userID}: Credentials)
 {
-  const isLogged = true; 
-
+  const isLogged = typeof userID === "string"; 
 
   if (isLogged)
+  {
     return (
-      <a class={tw('inline')} href="/auth/connect">Login</a>
+      <a class={tw('inline')} href="/auth/connect">Logged</a>
     );
+  }  
+
+  return (
+    <a class={tw('inline')} href="/auth/connect">Login</a>
+  );
 }

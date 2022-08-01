@@ -10,30 +10,26 @@ import { dbClient, ExecuteStatementCommand } from "../modules/db/init.ts";
 export const handler: Handlers = {
   async GET(req: Request, ctx: HandlerContext) {
     const rawCookies = req.headers.get("cookie");
-    const strCookies = rawCookies || `sessionID=${crypto.randomUUID()}`;
-
-    const cookies = splitCookies(strCookies); 
-    const credentials = {
-      sessionID: cookies["sessionID"],
-    };
-
-    const resp = await ctx.render(credentials);
-    if (rawCookies != strCookies)
+    
+    if (typeof rawCookies != "undefined")
     {
-      // Create session in DB
-      
-
-      resp.headers.set("Set-Cookie", `${strCookies}; SameSite=Strict; Max-Age=${604800}`);
+      const cookies = splitCookies(rawCookies || ""); 
+      const credentials = {
+        userID: cookies["userID"]
+      };
+      return await ctx.render(credentials);
     }
 
-    return resp;
+    return await ctx.render();
   },
 };
 
-export default function Home( props: PageProps<Credentials> ) {
+export default function Home( { data }: PageProps<Credentials | null> ) {
+  const userID = data?.userID;
+
   return (
     <div class={tw('')}>
-      <Menu sessionID={props.data.sessionID}/>
+      <Menu userID={userID}/>
 
       <main>
         <h1>Home</h1>
