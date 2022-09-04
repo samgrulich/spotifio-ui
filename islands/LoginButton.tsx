@@ -8,3 +8,10 @@
  *    show img and username
  *  else show login
  */
+
+export default LoginButton()
+{
+    return (
+        <div></div>
+    )
+}

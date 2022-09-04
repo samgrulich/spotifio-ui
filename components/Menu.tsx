@@ -25,7 +25,7 @@ export default function Menu({userID}: Credentials)
         <MenuButton name="Music" href="/music" isActive={false}/>
       </ul>
       {/* <a class={tw('inline')} href="/auth/connect">Login</a> */}
-      <Login userID={userID}></Login>
+      <Login userId={userID}></Login>
     </nav>
     </div>
   );

@@ -2,14 +2,12 @@
 
 import { h } from "preact";
 import { tw } from "@twind";
-import { Credentials } from "../modules/types.ts";
-import { dbClient, ExecuteStatementCommand } from "../modules/db/init.ts";
+import { LoginData } from "../modules/credentials.ts";
 
-export default function Login({userID}: Credentials)
+
+export default function Login(loginData: LoginData)
 {
-  const isLogged = typeof userID === "string"; 
-
-  if (isLogged)
+  if (loginData.isLogged)
   {
     return (
       <a class={tw('inline')} href="/auth/connect">Logged</a>

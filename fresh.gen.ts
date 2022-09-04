@@ -3,32 +3,28 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import * as $0 from "./routes/_middleware.ts";
-import * as $1 from "./routes/auth/callback.tsx";
-import * as $2 from "./routes/auth/connect.tsx";
+import * as $1 from "./routes/auth/login.tsx";
+import * as $2 from "./routes/auth/register.tsx";
 import * as $3 from "./routes/index.tsx";
-import * as $4 from "./routes/music.tsx";
+import * as $4 from "./routes/player.tsx";
 import * as $5 from "./routes/playlists.tsx";
 import * as $$0 from "./islands/Counter.tsx";
 import * as $$1 from "./islands/LoginButton.tsx";
 import * as $$2 from "./islands/Playlist.tsx";
-import * as $$3 from "./islands/Save.tsx";
-import * as $$4 from "./islands/Test.tsx";
 
 const manifest = {
   routes: {
     "./routes/_middleware.ts": $0,
-    "./routes/auth/callback.tsx": $1,
-    "./routes/auth/connect.tsx": $2,
+    "./routes/auth/login.tsx": $1,
+    "./routes/auth/register.tsx": $2,
     "./routes/index.tsx": $3,
-    "./routes/music.tsx": $4,
+    "./routes/player.tsx": $4,
     "./routes/playlists.tsx": $5,
   },
   islands: {
     "./islands/Counter.tsx": $$0,
     "./islands/LoginButton.tsx": $$1,
     "./islands/Playlist.tsx": $$2,
-    "./islands/Save.tsx": $$3,
-    "./islands/Test.tsx": $$4,
   },
   baseUrl: import.meta.url,
 };
