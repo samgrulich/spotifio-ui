@@ -1,3 +1,6 @@
+/** @jsx h */
+import { h } from "preact";
+
 /**
  * Check session storage, 
  *  for user data, if there are none,
@@ -9,7 +12,7 @@
  *  else show login
  */
 
-export default LoginButton()
+export default function LoginButton()
 {
     return (
         <div></div>

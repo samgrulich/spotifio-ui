@@ -2,7 +2,7 @@
 
 import { h } from "preact";
 import { tw } from "@twind";
-import { Credentials } from "../modules/types.ts";
+import { LoginData } from "../modules/credentials.ts";
 import MenuButton  from "./MenuButton.tsx";
 import Login from "./LoginButton.tsx";
 
@@ -12,7 +12,7 @@ const Head = () => (
   </head>
 )
 
-export default function Menu({userID}: Credentials)
+export default function Menu()
 {
   return (
     <div class={tw('w-screen mb-3 py-3 bg-black')}>
@@ -25,7 +25,6 @@ export default function Menu({userID}: Credentials)
         <MenuButton name="Music" href="/music" isActive={false}/>
       </ul>
       {/* <a class={tw('inline')} href="/auth/connect">Login</a> */}
-      <Login userId={userID}></Login>
     </nav>
     </div>
   );

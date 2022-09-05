@@ -1,3 +1,6 @@
+/** @jsx h */
+import { h } from "preact";
+
 /**
  * - Get playlist info
  * 
@@ -20,3 +23,10 @@
  *  all tracks 
  *  :on track hover show name
  */
+
+export default function Playlist()
+{
+    return (
+        <div></div>
+    )
+}
