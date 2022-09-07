@@ -1,5 +1,5 @@
 import { IS_BROWSER } from "$fresh/runtime.ts";
-import { apply, theme, extend, Configuration, setup } from "twind";
+import { apply, theme, Configuration, setup } from "twind";
 import { Main } from "./styles.ts";
 export * from "twind";
 
@@ -7,7 +7,8 @@ export const config: Configuration = {
   preflight: {
     h1: apply('font-bold inline'),
     main: apply('p-4 mx-auto max-w-screen-md'),
-    body: apply('text-white bg-gray-800'),
+    body: apply('text-white bg-gray-700'),
+    a: apply('text-green-500 underline'),
     // // Import external stylesheet
     // '@import': `url('https://fonts.googleapis.com/css2?amily=Roboto:ital,wght@0,400;0,700;1,400&display=swap')`,
     // // Declare font face
