@@ -9,6 +9,10 @@ export const config: Configuration = {
     main: apply('p-4 mx-auto max-w-screen-md'),
     body: apply('text-white bg-gray-700'),
     a: apply('text-green-500 underline'),
+    th: apply('text-left p-2'),
+    td: apply('text-left p-2'),
+    tr: apply('even:(bg-gray-900)'),
+    hr: apply('decoration-gray-600'),
     // // Import external stylesheet
     // '@import': `url('https://fonts.googleapis.com/css2?amily=Roboto:ital,wght@0,400;0,700;1,400&display=swap')`,
     // // Declare font face

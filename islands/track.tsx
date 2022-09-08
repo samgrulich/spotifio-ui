@@ -5,10 +5,10 @@ import { tw } from "twind";
 export default function Track()
 {
   return (
-    <div>
-      <img src="" alt="Track Cover" />
-      <p>Track name</p>
-      <p>Other info</p>
-    </div>
+    <tr> 
+      <td class={tw(`w-4 h-8`)} ><img class={tw(`w-4 h-8`)} src="" alt="Cover" /></td>
+      <td>Track name</td> 
+      <td>Other info</td>
+    </tr>
   )
 }

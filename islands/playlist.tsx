@@ -5,32 +5,19 @@ import Track from "./track.tsx";
 
 interface PlaylistProps
 {
-  showDetail: boolean;
+  index: number;
 }
 
-export default function Playlist({showDetail}: PlaylistProps)
+export default function Playlist({index}: PlaylistProps)
 {
-  if (showDetail)
-    return (
-      <div>
-        {
-          /**
-           * foreach track in playlist:
-           *  load track
-           */
-        } 
-        <div>
-          <Track />
-        </div> 
-      </div>
-    )
-
   return (
-    <div>
-      <div>
-        <img src="" alt="Playlist Cover" />
+    <div class={tw(`h-44 w-44 relative bg-gray-700 scale-0 rounded-md group-main-active:(scale-100) transition-all delay-${index * 100}`)}>
+       <div class={tw(`h-40 w-40 absolute left-1/3 translate-y-2 bg-red-500`)} style="z-index: -1">
+        <img src="" alt="Music disc" />
       </div>
-      <img src="" alt="Music disc" />
+      <div class={tw(`absolute animate-pulse`)}>
+        <img class={tw(`h-44 w-44 bg-gray-900 rounded-lg text(xs gray-900)`)} src="" alt="Playlist Cover" />
+      </div>
     </div>
   )
 }
