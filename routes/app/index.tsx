@@ -2,8 +2,7 @@
 import { h } from "preact";
 import { tw, apply } from "@twind";
 import Playlist from "../../islands/playlist.tsx";
-
-const trackerStyle = apply('w-1/2 m-3 p-3 bg-black h-96')
+import MusicControls from "../../islands/musicControls.tsx";
 
 export default function Playlists()
 {
@@ -19,21 +18,14 @@ export default function Playlists()
          *  show playlist
          */}
       
-        <div class={tw(`inline group-main-active:(-bottom-0) delay-200 interactive glass rounded-t-lg p-5 mx-auto w-full shadow-lg absolute -bottom-full left-0 transition-all`)}>
-          <div class={tw(`centered top-0`)}>
-            <img class={tw(`inline w-96`)} src="" alt="Disc Player" />
+        <div class={tw(`inline interactive glass rounded-t-lg p-5 mx-auto w-full shadow-lg absolute bottom-0 left-0 secondary`)}>
+          <div class={tw(`centered !-top-4`)}>
+            <img class={tw(`inline w-20`)} src="/vinyl_player_simple.png" alt="Disc Player" />
           </div>
+
+          <MusicControls />
+          
           <div class={tw(`inline float-right pr-10`)}>
-            <div class={tw(`centered`)}>
-              <div class={tw(`w-full relative left-1/2`)}>Player</div> 
-              <div class={tw(`flex space-x-1`)}>
-                <div>Love it</div> 
-                <div>Back</div>
-                <div>Play/Pause</div>
-                <div>Skip</div>
-                <div>Like</div>
-              </div> 
-            </div> 
             
             <div class={tw(`group-user h-16 w-auto relative right-0 inline-flex`)}>
               <img class={tw(`w-10 h-10 my-auto rounded-full bg-black`)} src="" alt=" " /> 

@@ -13,6 +13,7 @@ export const config: Configuration = {
     td: apply('text-left p-2'),
     tr: apply('even:(bg-gray-900)'),
     hr: apply('decoration-gray-600'),
+    svg: apply('w-8 h-8'),
     // // Import external stylesheet
     // '@import': `url('https://fonts.googleapis.com/css2?amily=Roboto:ital,wght@0,400;0,700;1,400&display=swap')`,
     // // Declare font face

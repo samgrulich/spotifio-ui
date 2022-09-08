@@ -9,8 +9,9 @@ import * as $3 from "./routes/auth/login.tsx";
 import * as $4 from "./routes/auth/register.tsx";
 import * as $5 from "./routes/index.tsx";
 import * as $$0 from "./islands/Counter.tsx";
-import * as $$1 from "./islands/playlist.tsx";
-import * as $$2 from "./islands/track.tsx";
+import * as $$1 from "./islands/musicControls.tsx";
+import * as $$2 from "./islands/playlist.tsx";
+import * as $$3 from "./islands/track.tsx";
 
 const manifest = {
   routes: {
@@ -23,8 +24,9 @@ const manifest = {
   },
   islands: {
     "./islands/Counter.tsx": $$0,
-    "./islands/playlist.tsx": $$1,
-    "./islands/track.tsx": $$2,
+    "./islands/musicControls.tsx": $$1,
+    "./islands/playlist.tsx": $$2,
+    "./islands/track.tsx": $$3,
   },
   baseUrl: import.meta.url,
 };
