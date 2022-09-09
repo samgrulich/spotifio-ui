@@ -7,13 +7,15 @@ export default function Detail()
 {
   return (
     <div class={tw(`p-10`)}>
-      <table class={tw(`w-full p-5 bg-gray-800 rounded-lg table-auto`)}>
+      <table class={tw(`w-full p-5 rounded-lg table-auto`)}>
         <thead> 
           <th>Cover <hr /></th>
           <th>Title <hr /></th>
           <th>Other <hr /></th>
         </thead>
         <tbody>
+          <Track/>
+          <Track/>
           <Track/>
           <Track/>
         </tbody>
