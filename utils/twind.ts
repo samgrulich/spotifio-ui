@@ -11,7 +11,6 @@ export const config: Configuration = {
     a: apply('text-green-500 underline'),
     th: apply('text-left p-2'),
     td: apply('text-left p-2'),
-    tr: apply('even:(bg-gray-900)'),
     hr: apply('decoration-gray-600'),
     svg: apply('w-8 h-8'),
     // // Import external stylesheet

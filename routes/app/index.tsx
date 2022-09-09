@@ -20,7 +20,9 @@ export default function Playlists()
       
         <div class={tw(`inline interactive glass rounded-t-lg p-5 mx-auto w-full shadow-lg absolute bottom-0 left-0 secondary`)}>
           <div class={tw(`centered !-top-4`)}>
-            <img class={tw(`inline w-20`)} src="/vinyl_player_simple.png" alt="Disc Player" />
+            <a href="/app/detail">
+              <img class={tw(`inline w-20`)} src="/vinyl_player_simple.png" alt="Disc Player" />
+            </a>
           </div>
 
           <MusicControls />
