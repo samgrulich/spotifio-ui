@@ -27,6 +27,7 @@ export default function Home() {
       <main>
         <h1>Home</h1>
         <p>Welcome! Spotfio lets you track your spotify playlists and listen to music with friends</p>
+        <button><a href="/auth/connect">Spotify Connect</a></button>
       </main>
     </div>
   );
