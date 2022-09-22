@@ -1,3 +1,5 @@
+/** @jsx h */
+import { h } from "preact";
 import { Handlers, HandlerContext } from "$fresh/server.ts";
 import { fetchApi, getApi } from "../../modules/api.ts";
 // import { SCOPES } from "../../consts/spotify.ts";
@@ -19,4 +21,13 @@ export const handler: Handlers = {
     const queryURL = data["url"];
     return Response.redirect(queryURL, 302);
   } 
+}
+
+export default function Connect()
+{
+  return (
+    <div>
+      Something's wrong, I can feel it.
+    </div>
+  )
 }

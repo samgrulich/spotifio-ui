@@ -9,7 +9,10 @@ export async function handler(
   ctx: MiddlewareHandlerContext<State>,
 ) {
   // ctx.state.cookies = req.headers.get("cookie") || "";
-  const resp = await ctx.next();
+  const resp = await ctx.next()
+    .catch(err => {
+      console.log(err);
+    });
   // resp.headers.set("server", "fresh server");
 
   // error handling

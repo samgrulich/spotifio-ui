@@ -1,6 +1,3 @@
-<<<<<<< HEAD
 *.gen.ts
-=======
 .env
 */.env
->>>>>>> remote
