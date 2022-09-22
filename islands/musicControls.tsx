@@ -5,7 +5,7 @@ import { tw } from "twind";
 export default function MusicControls()
 {
   return (
-    <div class={tw(`block absolute top-1/2 left-0 translate-x-1/2 -translate-y-1/2`)}>
+    <div>
       <input class={tw(`block w-96 hidden`)} style="" type="range" name="" id="" />
       <div class={tw(`flex space-x-8 justify-center mt-2`)}>
         <button>

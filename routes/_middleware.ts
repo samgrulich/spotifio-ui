@@ -11,5 +11,7 @@ export async function handler(
   // ctx.state.cookies = req.headers.get("cookie") || "";
   const resp = await ctx.next();
   // resp.headers.set("server", "fresh server");
+
+  // error handling
   return resp;
 }
