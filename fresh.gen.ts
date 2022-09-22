@@ -5,9 +5,10 @@
 import * as $0 from "./routes/_middleware.ts";
 import * as $1 from "./routes/app/detail.tsx";
 import * as $2 from "./routes/app/index.tsx";
-import * as $3 from "./routes/auth/login.tsx";
-import * as $4 from "./routes/auth/register.tsx";
-import * as $5 from "./routes/index.tsx";
+import * as $3 from "./routes/auth/connect.tsx";
+import * as $4 from "./routes/auth/login.tsx";
+import * as $5 from "./routes/auth/register.tsx";
+import * as $6 from "./routes/index.tsx";
 import * as $$0 from "./islands/Counter.tsx";
 import * as $$1 from "./islands/ToggleButton.tsx";
 import * as $$2 from "./islands/musicControls.tsx";
@@ -19,9 +20,10 @@ const manifest = {
     "./routes/_middleware.ts": $0,
     "./routes/app/detail.tsx": $1,
     "./routes/app/index.tsx": $2,
-    "./routes/auth/login.tsx": $3,
-    "./routes/auth/register.tsx": $4,
-    "./routes/index.tsx": $5,
+    "./routes/auth/connect.tsx": $3,
+    "./routes/auth/login.tsx": $4,
+    "./routes/auth/register.tsx": $5,
+    "./routes/index.tsx": $6,
   },
   islands: {
     "./islands/Counter.tsx": $$0,
