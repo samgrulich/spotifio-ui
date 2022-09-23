@@ -10,7 +10,7 @@ export const handler: Handlers = {
     const params = url.searchParams;
     const response = getApi("/auth/callback", params);
 
-    return new Response();
+    return new Response("Callback page, processing...");
   }
 }
 

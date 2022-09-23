@@ -28,7 +28,11 @@ export function fetchApi(endpoint: string, method: Method, data?: any, searchPar
     url.searchParams.set(key, value);
   });
 
-  return fetch(url, options);
+  return fetch(url, options)
+    // .catch(err => {
+    //   const body = {msg: "Server communication failed", err: err.message};
+    //   // return new Response(JSON.stringify(body), {status: 500});
+    // });
 }
 
 export function getApi(endpoint: string, searchParams?: URLSearchParams)

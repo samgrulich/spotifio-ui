@@ -6,15 +6,24 @@ interface State {
 
 export async function handler(
   req: Request,
-  ctx: MiddlewareHandlerContext<State>,
+  ctxt: MiddlewareHandlerContext<State>,
 ) {
-  // ctx.state.cookies = req.headers.get("cookie") || "";
-  const resp = await ctx.next()
-    .catch(err => {
-      console.log(err);
-    });
-  // resp.headers.set("server", "fresh server");
+  try
+  {
+    const response = await ctxt.next();
+    
+    // if (response.status >= 400)
+    //   throw response;
 
+    return response;
+  }
+  catch(err)
+  {
+    console.log(err);
+    return new Response("This is wrong.. I shouldn't be here");
+  }
+
+  // ctx.state.cookies = req.headers.get("cookie") || "";
+  // resp.headers.set("server", "fresh server");
   // error handling
-  return resp;
 }
