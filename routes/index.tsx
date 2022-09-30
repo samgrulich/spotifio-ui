@@ -2,7 +2,7 @@
 import { h } from "preact";
 import { tw } from "@twind";
 import { Handlers, HandlerContext, PageProps } from "$fresh/server.ts";
-import { splitCookies } from "../modules/functions.ts";
+import { parseCookies } from "../modules/functions.ts";
 
 export const handler: Handlers = {
   async GET(req: Request, ctx: HandlerContext) {
@@ -10,7 +10,7 @@ export const handler: Handlers = {
     
     if (typeof rawCookies != "undefined")
     {
-      const cookies = splitCookies(rawCookies || ""); 
+      const cookies = parseCookies(rawCookies || ""); 
       const credentials = {
         userID: cookies["userID"]
       };

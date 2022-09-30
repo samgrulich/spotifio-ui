@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from "preact";
 import { tw } from "twind";
-import Track from "../../islands/track.tsx";
+import Track from "../../islands/Track.tsx";
 
 export default function Detail()
 {

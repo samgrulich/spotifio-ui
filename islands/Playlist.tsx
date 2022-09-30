@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from "preact";
 import { tw } from "twind";
-import Track from "./track.tsx";
+import Track from "./Track.tsx";
 
 interface PlaylistProps
 {

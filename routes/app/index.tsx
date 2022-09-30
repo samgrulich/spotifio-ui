@@ -1,15 +1,19 @@
 /** @jsx h */
 import { h } from "preact";
 import { tw, apply } from "@twind";
-import Playlist from "../../islands/playlist.tsx";
-import MusicControls from "../../islands/musicControls.tsx";
+import Playlist from "../../islands/Playlist.tsx";
+import MusicControls from "../../islands/MusicControls.tsx";
+import DateSelection from "../../islands/DateSelection.tsx";
+import PlaylistsRenderer from "../../islands/PlaylistsRender.tsx";
 
 export default function Playlists()
 {
   return (
     <div class={tw('group-main h-screen w-screen')}>
       <main>
-        <div class={tw(`grid grid-cols-4 gap-64`)}>
+        <h1 class={tw('absolute top-0 left-0 translate-0.5 font(black italic) text(gray-900 4xl)')}>Spotifio</h1>
+
+        <div id="renderTarget" class={tw(`grid grid-cols-4 gap-64`)}>
           <Playlist index={0}/>
           <Playlist index={1}/>
         </div>
@@ -17,7 +21,7 @@ export default function Playlists()
          *  for each playlist in user playlist
          *  show playlist
          */}
-      
+
         <div class={tw(`inline interactive glass rounded-t-lg p-5 mx-auto w-full shadow-lg absolute bottom-0 left-0 secondary`)}>
           <div class={tw(`centered !-top-4`)}>
             <a href="/app/detail">
@@ -26,8 +30,13 @@ export default function Playlists()
           </div>
 
           <div class={tw(`block absolute top-1/2 left-40 translate-x-2/3 -translate-y-1/2`)}>
-            <MusicControls />
+            {/* <DateSelection setOutput={setDate}/>  */}
+            <PlaylistsRenderer />
           </div>
+
+          {/* <div class={tw(`block absolute top-1/2 left-40 translate-x-2/3 -translate-y-1/2`)}>
+            <MusicControls />
+          </div> */}
           
           <div class={tw(`inline float-right pr-10`)}>
             

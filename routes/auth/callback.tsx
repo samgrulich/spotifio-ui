@@ -1,16 +1,23 @@
 /** @jsx h */
 import { h } from "preact";
 import { Handlers, HandlerContext } from "$fresh/server.ts";
-import { getApi } from "../../modules/api.ts";
+import { getApi } from "../../modules/api/functions.ts";
 
 export const handler: Handlers = {
-  GET(req: Request, _ctx: HandlerContext): Response
+  async GET(req: Request, ctxt: HandlerContext): Promise<Response>
   {
     const url = new URL(req.url);
     const params = url.searchParams;
-    const response = getApi("/auth/callback", params);
+    const response = await getApi("/auth/callback", params);
 
-    return new Response("Callback page, processing...");
+    const data = await response.json();
+    // if (!data)
+    // render error 
+
+    const pageResponse = await ctxt.render();
+    pageResponse.headers.append("Set-Cookie", JSON.stringify({UserId: data["id"]}));
+    pageResponse.headers.append("Set-Cookie", JSON.stringify({Token: data["token"]}));
+    return pageResponse;
   }
 }
 
