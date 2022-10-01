@@ -1,5 +1,5 @@
 import { IS_BROWSER } from "$fresh/runtime.ts";
-import { apply, theme, Configuration, setup } from "twind";
+import { apply, Configuration, setup } from "twind";
 import * as colors from "twind/colors";
 import { Main } from "./styles.ts";
 export * from "twind";
@@ -7,8 +7,7 @@ export * from "twind";
 export const config: Configuration = {
   preflight: {
     h1: apply('font-bold inline'),
-    main: apply('p-4 mx-auto max-w-screen-md'),
-    body: apply('text-white bg-gray-700'),
+    body: apply('text-white bg-black overflow-x-hidden'),
     a: apply('text-green-500 underline'),
     th: apply('text-left p-2'),
     td: apply('text-left p-2'),
@@ -34,16 +33,20 @@ export const config: Configuration = {
   hash: false,
   theme: {
     extend: {
-      colors,
-    },
-    colors:
-    {
-      primary: "rgba(0, 100, 20, 20)"
+      colors: {
+        ...colors,
+      },
+      screens: {
+        sm: "300px",
+        lg: "1300px",
+      }
     }
   },
   darkMode: "class",
   // sheet: voidSheed,
-  plugins: Main,
+  plugins: {
+    ...Main,
+  },
 };
 
 if (IS_BROWSER) setup(config);

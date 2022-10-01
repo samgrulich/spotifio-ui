@@ -14,13 +14,13 @@ function parsePadding(padding?: [x?: number, y?: number]): {x: number, y: number
   return {x, y}
 }
 
-export default function VinylDisc(props: {size: number, color?: string, padding?: [x?: number, y?: number], style?: string})
+export default function Disc(props: {size: number, color?: string, padding?: [x?: number, y?: number], style?: string})
 {
   const color = props.color ?? "orange-500";
   const size = Math.min(64, props.size);
   const borderSize = Math.floor(20 * props.size / 16);
   const padding = parsePadding(props.padding);
-  const localStyle = (`bg-${color} w-${size} h-${size} rounded-full border(solid [${borderSize}px] black)`);
+  const localStyle = (`bg-${color} w-${size} h-${size} rounded-full border(solid [${borderSize}px] coolGray-900)`);
   const style = [
     "inline-flex", 
     `w-${size + 2 * padding.x} h-${size + 2 * padding.y} px-${padding.x} py-${padding.y}`, 
