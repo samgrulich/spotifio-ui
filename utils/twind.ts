@@ -1,5 +1,6 @@
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { apply, theme, Configuration, setup } from "twind";
+import * as colors from "twind/colors";
 import { Main } from "./styles.ts";
 export * from "twind";
 
@@ -32,12 +33,13 @@ export const config: Configuration = {
   mode: "warn", // silent, warn, strict
   hash: false,
   theme: {
-    extend:{
-      colors:
-      {
-        primary: "rgba(0, 100, 20, 20)"
-      }
+    extend: {
+      colors,
     },
+    colors:
+    {
+      primary: "rgba(0, 100, 20, 20)"
+    }
   },
   darkMode: "class",
   // sheet: voidSheed,
