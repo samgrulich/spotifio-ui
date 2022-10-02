@@ -7,12 +7,14 @@ export * from "twind";
 export const config: Configuration = {
   preflight: {
     h1: apply('font-bold inline'),
+    h2: apply('text-2xl'),
     body: apply('text-white bg-black overflow-x-hidden'),
     a: apply('text-green-500 underline'),
     th: apply('text-left p-2'),
     td: apply('text-left p-2'),
     hr: apply('decoration-gray-600'),
     svg: apply('w-8 h-8'),
+    ol: apply('list-decimal')
     // // Import external stylesheet
     // '@import': `url('https://fonts.googleapis.com/css2?amily=Roboto:ital,wght@0,400;0,700;1,400&display=swap')`,
     // // Declare font face
@@ -28,6 +30,7 @@ export const config: Configuration = {
     //     src: 'url(/fonts/proxima-nova/500-medium.woff) format("woff")',
     //   },
     // ],
+    // '@import': `url()`,
   },
   mode: "warn", // silent, warn, strict
   hash: false,

@@ -16,7 +16,7 @@ function parsePadding(padding?: [x?: number, y?: number]): {x: number, y: number
 
 export default function Disc(props: {size: number, color?: string, padding?: [x?: number, y?: number], style?: string})
 {
-  const color = props.color + "-500" ?? "orange-500";
+  const color = props.color ? props.color + "-500" : "orange-500";
   const origSize = Math.min(64, props.size);
   const size = origSize % 2 + origSize;
   const borderSize = Math.floor(20 * props.size / 16);

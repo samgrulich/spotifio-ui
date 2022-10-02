@@ -13,10 +13,12 @@ export default function VinylBackground(props: {vinylAmount: number, height?: nu
   for (const index of Array(props.vinylAmount)) 
   {
     const x = Math.floor(Math.random() * 100);
-    const y = Math.floor(Math.random() * height);
+    const yRandom = Math.random();
+    const y = Math.floor(yRandom * height);
     const size = Math.floor(Math.random() * discSizeDelta) + props.discSize[0];
+    const gradientedSize =  Math.min(0.4 +(1 - yRandom), 1);
 
-    result.push(<Disc size={size} style={`absolute top-0 left-0 ml-[${x}%] mt-[${y}vh] -translate-1/2`} color={randomColor()}/>)
+    result.push(<Disc size={size} style={`absolute top-0 left-0 ml-[${x}%] mt-[${y}vh] scale-[${gradientedSize}] opacity-[${1 - yRandom}] -translate-1/2`} color={randomColor()}/>)
   }
 
   return (
