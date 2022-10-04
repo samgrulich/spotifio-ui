@@ -67,9 +67,9 @@ export default function Home() {
                 <Paragraph offset="15%">We help you track playlists.</Paragraph>
                 <Paragraph offset="5%">So you can see what you were listening to.</Paragraph>
               </div>
-              <Image src="/players/walkman.png" alt="evolution row walkman" width="100px" tapeOffsetY={15} style={"absolute top-[16rem] left-10 hidden md:block"}/>
+              <Image src="/players/walkman.png" alt="evolution row walkman" width="100px" tapeOffsetY={15} style={"absolute top-[45vh] left-10 hidden md:block"}/>
               <Image src="/players/mp3.png" alt="evolution row mp3" width="200px" imgStyle="origin-bottom rotate-90 relative -translate-x-[15%]" style={"absolute top-[12rem] -right-[7rem] sm:hidden lg:block"}/>
-              <Image src="/players/ipod.png" alt="evolution row ipod" width="100px" tapeOffsetY={12} style={"centerX top(sm:4 md:0 lg:[6vh]) lg:translate-y-1/2 scale(sm:75 md:100)"}/>
+              <Image src="/players/ipod.png" alt="evolution row ipod" width="100px" tapeOffsetY={12} style={"centerX top(sm:4 md:0 ) lg:translate-y-1/2 scale(sm:75 md:100)"}/>
               {/* <p class={tw('p-5 min-w-[200px]')}></p> */}
             </div>
             </div>
@@ -78,7 +78,7 @@ export default function Home() {
           <div class={tw('h-screen')}>
             <h2 class={tw('intro-header')}>And who are <b>you</b>?</h2>
             {/* <Disc size={20}/> */}
-            <textarea name="" id="" cols={20} rows={10} placeholder="Tell me here" class={tw('w-screen h-[50vh] relative -left-[13%] top-(sm:0 md:[10vh]) p-5 text(2xl black)')}></textarea>
+            <textarea name="" id="" cols={20} rows={10} placeholder="Tell me here" class={tw('w-screen h-[50vh] relative -left-[13%] top-(sm:0 md:[10vh]) p-5 text(2xl black) bg-gray-700')}></textarea>
             <VinylBackground vinylAmount={100} discSize={[20, 40]}/>
           </div>
           <div class={tw('intro-divider bg-yellow-600')}></div>
