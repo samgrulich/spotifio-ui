@@ -13,7 +13,7 @@ export default function Playlists()
 {
   return (
     <div class={tw('group-main h-screen w-screen')}>
-      <main class={tw('pt-24 p-0')}>
+      <main class={tw('pt(md:24) p-0')}>
         <div id="renderTarget" class={tw(`grid grid-cols(2 md:3 lg:4) mx(0 md:auto) w(sm:[100%] md:[80%] lg:[1000px]) gap(x(sm:1 md:16 lg:24) y(sm:0 md:16))`)}>
           <Playlist index={0}/>
           <Playlist index={1}/>
@@ -44,26 +44,26 @@ export default function Playlists()
          *  show playlist
          */}
 
-        <div style={"backdrop-filter: blur(12px);"} class={tw(`sticky interactive bg-opacity-80 p-5 h-24 w-screen shadow(lg) bottom-0 left-0 lg:(left-1/2 -translate-x-[10%] w-10/12 rounded-t-lg)`)}>
-          <div class={tw(`centered -top-4 scale-[1.4]`)}>
+        <div style={"backdrop-filter: blur(12px);"} class={tw(`sticky interactive bg-opacity-100 p-5 h-24 w-screen shadow-lg bottom-0 left-0 lg:(translate-x-[25%] w-2/3 rounded-t-lg)`)}>
+          <div class={tw(`centered sm:-top-0 md:-top-4 md:scale-[1.4]`)}>
             <a href="/app/detail">
               <Player style="border(solid coolGray-900 1) shadow(md)"/>
             </a>
           </div>
 
-          <div class={tw(`block absolute top-1/2 left-24 -translate-y-1/2`)}>
+          <div class={tw(`absolute sm:(top-full) left-1/2 md:(block top-1/2 left-24 -translate-y-1/2)`)}>
             <a href="/">
-              <h1 class={tw('absolute top-0 left-0 -translate-1/2 font(black italic) text(gray-700 4xl)')}>Spotifio</h1>
+              <h1 class={tw('absolute top-0 left-0 -translate-x-1/2 -translate-y-[150%] md:-translate-y-1/2 font-italic text(gray-900 md:4xl sm:xl)')}>Spotifio</h1>
             </a>
           </div>
 
-          <div class={tw(`block absolute top-1/2 right-[14%] -translate-x-2/3 -translate-y-1/2`)}>
+          <div class={tw(`absolute top-1/2 sm:(right-full translate-x-full) pl(1 md:0) scale([80%] md:100) md:(right-[14%] -translate-x-2/3) -translate-y-1/2`)}>
             <PlaylistsRenderer />
           </div>
           
-          <div class={tw(`inline float-right pr-10`)}>
+          <div class={tw(`absolute right-0 tranlate-x-1/2`)}>
             
-            <div class={tw(`group-user h-16 w-auto relative right-0 inline-flex`)}>
+            <div class={tw(`group-user h-16 w-auto mr(2 md:10) relative right-0 inline-flex`)}>
               <img class={tw(`w-10 h-10 my-auto rounded-full bg-black`)} src="" alt=" " /> 
               <span class={tw(`my-auto mx-4`)}>Name</span>
               <div class={tw(`absolute p-3 top-0 interactive bg-black rounded-t-lg opacity-0 -translate-y-2/3 group-user-hover:(opacity-100 -translate-y-full transition-all duration-200 ease-in-out)`)}>

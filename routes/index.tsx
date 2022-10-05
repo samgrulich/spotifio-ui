@@ -81,8 +81,8 @@ export default function Home() {
             <textarea name="" id="" cols={20} rows={10} placeholder="Tell me here" class={tw('w-screen h-[50vh] relative -left-[13%] top-(sm:0 md:[10vh]) p-5 text(2xl black) bg-gray-700')}></textarea>
             <VinylBackground vinylAmount={100} discSize={[20, 40]}/>
           </div>
-          <div class={tw('intro-divider bg-yellow-600')}></div>
-          <div class={tw('h-screen')}>
+          {/* <div class={tw('intro-divider bg-yellow-600')}></div> */}
+          {/* <div class={tw('h-screen')}>
             <h2 class={tw('intro-header')}>How to <b>use</b>?</h2>
             <p class={tw('text(4xl gray-500)')}>It's easy</p>
             <ol class={tw('px-10 pb-5 text-3xl half-w centerX mt-[20vh]')}>
@@ -94,7 +94,10 @@ export default function Home() {
               Then app takes snapshots in regullar intervals <br />
               And after that we notify you when the snapshot is ready
             </p>
-          </div>
+          </div> */}
+          <a href={connectURL}>
+            <button class={tw('scale-150 block centerX px-3 py-2 my-32 bg-green-500 text-black font-bold rounded-full')}>Connect</button>
+          </a>
         </div>
       </main>
     </div>
