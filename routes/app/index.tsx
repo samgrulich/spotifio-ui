@@ -3,9 +3,8 @@ import { h } from "preact";
 import { tw, apply } from "@twind";
 import Playlist from "../../islands/Playlist.tsx";
 import MusicControls from "../../islands/MusicControls.tsx";
-import DateSelection from "../../islands/DateSelection.tsx";
 import PlaylistsRenderer from "../../islands/PlaylistsRender.tsx";
-import Disc from "../../components/VinylDisc.tsx";
+import Counter from "../../islands/Counter.tsx";
 import Player from "../../components/VinylPlayer.tsx";
 
 
@@ -14,9 +13,9 @@ export default function Playlists()
   return (
     <div class={tw('group-main h-screen w-screen')}>
       <main class={tw('pt(md:24) p-0')}>
-        <div id="renderTarget" class={tw(`grid grid-cols(2 md:3 lg:4) mx(0 md:auto) w(sm:[100%] md:[80%] lg:[1000px]) gap(x(sm:1 md:16 lg:24) y(sm:0 md:16))`)}>
+        <div id="renderTarget" class={tw(`min-h-screen grid grid-cols(2 md:3 lg:4) mx(0 md:auto) w(sm:[100%] md:[80%] lg:[1000px]) gap(x(sm:1 md:16 lg:24) y(sm:0 md:16))`)}>
           <Playlist index={0}/>
-          <Playlist index={1}/>
+          {/* <Playlist index={1}/>
           <Playlist index={2}/>
           <Playlist index={3}/>
           <Playlist index={4}/>
@@ -37,14 +36,14 @@ export default function Playlists()
           <Playlist index={19}/>
           <Playlist index={20}/>
           <Playlist index={21}/>
-          <Playlist index={22}/>
+          <Playlist index={22}/> */}
         </div>
         {/**
          *  for each playlist in user playlist
          *  show playlist
          */}
 
-        <div style={"backdrop-filter: blur(12px);"} class={tw(`sticky interactive bg-opacity-100 p-5 h-24 w-screen shadow-lg bottom-0 left-0 lg:(translate-x-[25%] w-2/3 rounded-t-lg)`)}>
+        <div style={"backdrop-filter: blur(12px);"} class={tw(`sticky interactive bg-opacity-100 p-5 h-24 w-screen shadow-lg bottom-0 float-bottom left-0 lg:(translate-x-[25%] w-2/3 rounded-t-lg)`)}>
           <div class={tw(`centered sm:-top-0 md:-top-4 md:scale-[1.4]`)}>
             <a href="/app/detail">
               <Player style="border(solid coolGray-900 1) shadow(md)"/>

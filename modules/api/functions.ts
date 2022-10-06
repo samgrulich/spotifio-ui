@@ -1,6 +1,7 @@
 import "dotenv/load.ts";
 
-const API_URL = Deno.env.get("API_BASE") ?? "";
+TODO: implement non server based alternative or api request ep
+// const API_URL = Deno.env.get("API_BASE") ?? "";
 
 if (!API_URL)
   console.warn("API_BASE missing from .env");

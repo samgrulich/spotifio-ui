@@ -11,12 +11,9 @@ export const handler: Handlers = {
     const response = await getApi("/auth/callback", params);
 
     const data = await response.json();
-    // if (!data)
-    // render error 
-
-    const pageResponse = await ctxt.render();
-    pageResponse.headers.append("Set-Cookie", JSON.stringify({UserId: data["id"]}));
-    pageResponse.headers.append("Set-Cookie", JSON.stringify({Token: data["token"]}));
+    const pageResponse = data ? Response.redirect("/app", 200) : await ctxt.render();
+     
+    pageResponse.headers.append("Set-Cookie", JSON.stringify({UserId: data["id"], Token: data["token"]}));
     return pageResponse;
   }
 }
@@ -27,6 +24,7 @@ export default function Callback()
     <div>
       Well... <br />
       This is awkward.
+      <a href="/auth/connect">Click here to connect again</a>
     </div>
   )
 }
