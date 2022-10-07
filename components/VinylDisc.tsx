@@ -17,10 +17,13 @@ function parsePadding(padding?: [x?: number, y?: number]): {x: number, y: number
 export default function Disc(props: {size: number, color?: string, padding?: [x?: number, y?: number], style?: string})
 {
   const color = props.color ? props.color + "-500" : "orange-500";
+
   const origSize = Math.min(64, props.size);
-  const size = origSize % 2 + origSize;
+  const size = origSize < 17 ? origSize - origSize % 2 : origSize - origSize % 4;
+
   const borderSize = Math.floor(20 * props.size / 16);
   const padding = parsePadding(props.padding);
+
   const localStyle = (`bg-${color} w-${size} h-${size} rounded-full border(solid [${borderSize}px] coolGray-900)`);
   const style = [
     "inline-flex", 

@@ -40,9 +40,9 @@ export default function Home() {
   return (
     <div class={tw('')}>
       <main>
-        <VinylBackground vinylAmount={100} discSize={[4, 12]} height={headerBackgroundHeight} style={"p-4 relative"}> 
+        <VinylBackground vinylAmount={84} discSize={[8, 25]} height={headerBackgroundHeight} style={"p-4 relative"}> 
         <div class={tw('md:(translate-y-1/2 centerX w-[50rem] h-[25vh])')}>
-          <div class={tw(`inline-block p-5 rounded-lg bg-black bg-opacity-80 md:centerX translate-y-[20vh]`)} style="backdrop-filter: blur(12px)">
+          <div class={tw(`inline-block p-5 rounded-xl bg-black bg-opacity-100 centerX translate-y-[20vh]`)} style="backdrop-filter: blur(12px)">
             <h1 class={tw('sm:text-4xl md:text-8xl p-2')}>Go back in time!</h1>
             <p class={tw('pl-4')}>{caption}</p>
           </div>
@@ -69,7 +69,7 @@ export default function Home() {
               </div>
               <Image src="/players/walkman.png" alt="evolution row walkman" width="100px" tapeOffsetY={15} style={"absolute top-[45vh] left-10 hidden md:block"}/>
               <Image src="/players/mp3.png" alt="evolution row mp3" width="200px" imgStyle="origin-bottom rotate-90 relative -translate-x-[15%]" style={"absolute top-[12rem] -right-[7rem] sm:hidden lg:block"}/>
-              <Image src="/players/ipod.png" alt="evolution row ipod" width="100px" tapeOffsetY={12} style={"centerX top(sm:4 md:0 ) lg:translate-y-1/2 scale(sm:75 md:100)"}/>
+              <Image src="/players/ipod.png" alt="evolution row ipod" width="100px" tapeOffsetY={12} style={"centerX top(sm:-3 md:0 ) lg:translate-y-1/2 scale(sm:75 md:100)"}/>
               {/* <p class={tw('p-5 min-w-[200px]')}></p> */}
             </div>
             </div>
@@ -78,8 +78,9 @@ export default function Home() {
           <div class={tw('h-screen')}>
             <h2 class={tw('intro-header')}>And who are <b>you</b>?</h2>
             {/* <Disc size={20}/> */}
-            <textarea name="" id="" cols={20} rows={10} placeholder="Tell me here" class={tw('w-screen h-[50vh] relative -left-[13%] top-(sm:0 md:[10vh]) p-5 text(2xl black) bg-gray-700')}></textarea>
-            <VinylBackground vinylAmount={100} discSize={[20, 40]}/>
+            <textarea name="" id="" cols={20} rows={10} placeholder="Tell me here" class={tw('w-screen h-[50vh] relative -left-[13%] top(sm:0 md:[10vh]) p-5 text(2xl black) bg-gray-700')}></textarea>
+            <VinylBackground vinylAmount={100} discSize={[20, 40]} style={"sm:hidden md:block"}/>
+            <VinylBackground vinylAmount={100} discSize={[10, 20]} style={"sm:block md:hidden"}/>
           </div>
           {/* <div class={tw('intro-divider bg-yellow-600')}></div> */}
           {/* <div class={tw('h-screen')}>
