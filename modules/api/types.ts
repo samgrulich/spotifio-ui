@@ -81,6 +81,16 @@ export interface ISnapshotShort
   creationDate: Date;
 }
 
+export interface ISnapshotInfo
+{
+  name: string;
+  previousSnap: string;
+  description: string;
+  color: string;
+  creationDate: string;
+  cover: Array<Image>;
+}
+
 export interface ISnapshot
 {
   userId: string; 

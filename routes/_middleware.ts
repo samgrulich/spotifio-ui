@@ -22,6 +22,8 @@ export async function handler(
 
     const response = await ctxt.next();
 
+    // deny iframing of this page, mainly because of spotify iframe terms of use
+    response.headers.append("X-FRAME-OPTIONS", "deny");
     return response;
   }
   catch(err)

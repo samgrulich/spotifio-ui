@@ -25,7 +25,7 @@ function renderPlaylists(playlists: Array<ISnapshot>)
 function renderPlaylist(playlist: ISnapshot)
 {
   return (
-    <Playlist index={0} cover={playlist.cover[0].url} title={playlist.name}/>
+    <Playlist index={0} info={playlist}/>
   )
 }
 
