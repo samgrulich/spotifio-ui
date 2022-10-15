@@ -11,19 +11,7 @@ export async function handler(
 ) {
   try
   {
-    const cookiesRaw = req.headers.get("cookie") || "";    
-    const cookies = parseCookies(cookiesRaw);
-    const cookiesKeys = Object.keys(cookies);
-
-    if(cookiesKeys.includes("UserId"))
-      req.headers.set("User-Id", cookies["UserId"]);
-    if(cookiesKeys.includes("Token"))
-      req.headers.set("Token", cookies["Token"]);
-
     const response = await ctxt.next();
-
-    // deny iframing of this page, mainly because of spotify iframe terms of use
-    response.headers.append("X-FRAME-OPTIONS", "deny");
     return response;
   }
   catch(err)

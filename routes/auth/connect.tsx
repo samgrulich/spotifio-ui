@@ -7,7 +7,7 @@ const SCOPES = "user-read-private user-read-email playlist-modify-private playli
 export const handler: Handlers = {
   async GET(req: Request, ctxt: HandlerContext): Promise<Response>
   {
-    const resp = await getApi("/auth/connect");
+    const resp = await getApi("/auth/connect", req.headers);
 
     if (resp.status != 200)
     {
