@@ -6,15 +6,30 @@ import MusicControls from "../../islands/MusicControls.tsx";
 import PlaylistsRenderer from "../../islands/PlaylistsRender.tsx";
 import Counter from "../../islands/Counter.tsx";
 import Player from "../../components/VinylPlayer.tsx";
+import { HandlerContext, Handlers, PageProps } from "$fresh/server.ts";
+import { getApi } from "../../modules/api/functions.ts";
+import { IUser } from "../../modules/api/types.ts";
 
 
-export default function Playlists()
+export const handler: Handlers<IUser> = {
+  async GET(req: Request, ctxt: HandlerContext<IUser>)
+  {
+    const res = await getApi("/users/detail", req.headers);
+    if(!res.ok)
+      throw Error(await res.text());
+
+    const userData: IUser = await res.json();
+    return ctxt.render(userData);
+  }
+}
+
+export default function Playlists({ data }: PageProps<IUser>)
 {
   return (
     <div class={tw('group-main h-screen w-screen')}>
       <main class={tw('pt(md:24) p-0')}>
         <div id="renderTarget" class={tw(`min-h-screen grid grid-cols(2 md:3 lg:4) mx(0 md:auto) w(sm:[100%] md:[80%] lg:[1000px]) gap(x(sm:1 md:16 lg:24) y(sm:0 md:16))`)}>
-          <Playlist index={0}/>
+          {/* <Playlist index={0}/> */}
           {/* <Playlist index={1}/>
           <Playlist index={2}/>
           <Playlist index={3}/>
@@ -63,8 +78,8 @@ export default function Playlists()
           <div class={tw(`absolute right-0 tranlate-x-1/2`)}>
             
             <div class={tw(`group-user h-16 w-auto mr(2 md:10) relative right-0 inline-flex`)}>
-              <img class={tw(`w-10 h-10 my-auto rounded-full bg-black`)} src="" alt=" " /> 
-              <span class={tw(`my-auto mx-4`)}>Name</span>
+              <img class={tw(`w-10 h-10 my-auto rounded-full bg-black`)} src={data.cover[0].url} alt=" " /> 
+              <span class={tw(`my-auto mx-4`)}>{data.name}</span>
               <div class={tw(`absolute p-3 top-0 interactive bg-black rounded-t-lg opacity-0 -translate-y-2/3 group-user-hover:(opacity-100 -translate-y-full transition-all duration-200 ease-in-out)`)}>
                 details   
                 more <br />

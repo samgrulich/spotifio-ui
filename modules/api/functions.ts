@@ -17,13 +17,12 @@ export function fetchApi(endpoint: string, reqHeaders: Headers, method: Method, 
 {
   const url = new URL(endpoint, API_URL);
   const cookies = parseCookieHeader(reqHeaders);
-  const userData = JSON.parse(cookies["userData"]);
-  const userHeaders = userData ? userData : {}; 
+  const userData = JSON.parse(cookies["userData"] ?? "{}");
   const options: Record<string, any> = {
     method,
     headers: {
       "Content-Type": "application/json",
-      ...userHeaders
+      ...userData
     }
   }
 
@@ -35,9 +34,29 @@ export function fetchApi(endpoint: string, reqHeaders: Headers, method: Method, 
   });
 
   return fetch(url, options)
-    .then(res => {
+    .then(async res => {
       if(!res.ok)
-        throw Error(res.statusText);
+      {
+        const data = await res.json()
+          .then(err => err)
+          .catch(_ => res.statusText);
+
+        if (Object.keys(data).includes("reason"))
+        {
+          switch (data["reason"]) {
+            case "User already logged in":
+            {
+              const response = new Response(JSON.stringify(data), {status: 202});
+              return response;
+            }
+          
+            default:
+              throw JSON.stringify(data);
+          }
+        }
+
+        throw JSON.stringify(data);
+      }
       
       return res;
     })
