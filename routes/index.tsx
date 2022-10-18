@@ -1,11 +1,11 @@
 /** @jsx h */
 import { h } from "preact";
 import { tw } from "@twind";
-import { Handlers, HandlerContext, PageProps } from "$fresh/server.ts";
+import { Handlers, HandlerContext } from "$fresh/server.ts";
 import { parseCookies } from "../modules/functions.ts";
 import VinylBackground from "../components/VinylBackground.tsx";
-import { randomElement, randomElementWeiged } from "../modules/ui/funcitons.ts";
-import Disc from "../components/VinylDisc.tsx";
+import { randomElementWeiged } from "../modules/ui/funcitons.ts";
+import MoveTo from "../islands/AnimateScroll.tsx";
 import Image from "../components/TapedImage.tsx";
 import Paragraph from "../components/IntroParagraph.tsx";
 
@@ -49,8 +49,9 @@ export default function Home() {
           <a href={connectURL}>
             <button class={tw('scale-150 block centerX px-3 py-2 mt-[35vh] bg-green-500 text-black font-bold rounded-full')}>Connect</button>
           </a>
-          <div class={tw('mt-[24vh] text-center')} >
-            ⬇ <a href="./#intro" class={tw('text-white')}>Explore</a>
+          <div class={tw('mt-[24vh] flex justify-center')} >
+            <span class={tw('pr-1')}>⬇</span> 
+            <MoveTo targetId="intro"> Explore </MoveTo>
           </div>
         </div>
         </VinylBackground>
