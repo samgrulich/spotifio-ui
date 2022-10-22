@@ -32,3 +32,10 @@ export function randomElementWeiged(selection: Record<string, number>)
   const index = Math.floor(Math.random() * weighedSelection.length);
   return weighedSelection[index];
 }
+
+export function getToday(): string
+{
+  const date = new Date();
+  const str = date.toISOString().split("T")[0];
+  return str;
+}

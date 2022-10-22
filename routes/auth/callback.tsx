@@ -25,10 +25,10 @@ export const handler: Handlers = {
     const data = await response.json();
     const appURL = new URL("/app", req.url);
 
-    if (response.status == 202)
-    {
-      return createRedirectResponse(appURL.href);
-    }
+    // if (response.status == 202)
+    // {
+    //   return createRedirectResponse(appURL.href);
+    // }
 
     const userData = {UserId: data["id"], Token: data["token"]};
     const headers = {"Set-Cookie": `userData=${JSON.stringify(userData)}; Max-Age=3600; Path=/`}

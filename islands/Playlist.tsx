@@ -24,8 +24,8 @@ export default function Playlist(props: {index?: number, id: string, info: ISnap
         <div class={tw(`h-40 w-40 absolute left-1/3 translate-y-2`)} style="z-index: -1">                  
           <Disc size={40} color={colorId}/>
         </div>
-        <div class={tw(`absolute`)}>
-          <img class={tw(`h-44 w-44 rounded-lg text(xs gray-900)`, bg)} src={cover} alt="Playlist cover"/>
+        <div class={tw(`absolute rounded-2xl`, bg)}>
+          <img class={tw(`h-44 w-44 rounded-lg text(xs gray-900)`)} src={cover} alt="Playlist cover"/>
         </div>
       </a>
     </div>

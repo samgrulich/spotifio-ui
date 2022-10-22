@@ -30,10 +30,10 @@ export async function handler(req: Request)
   console.log("ep", endpoint);
 
   if (!endpoint)
-    return new Response("Endpoint not found", {status: 404});
+    return new Response(JSON.stringify({msg: "Endpoint not found"}), {status: 404});
 
   const endpointAPI = parseEndpoints(endpoint);
 
-  const resp = await getApi(endpointAPI);
+  const resp = await getApi(endpointAPI, req.headers);
   return resp;
 }

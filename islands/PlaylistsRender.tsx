@@ -7,7 +7,8 @@ import { IS_BROWSER } from "$fresh/runtime.ts";
 import DateSelection from "./DateSelection.tsx";
 import Playlist from "./Playlist.tsx";
 import { getApi } from "../modules/api/functions.ts";
-import { ISnapshot } from "../modules/api/types.ts";
+import { ISnapshot, ISnapshotInfo } from "../modules/api/types.ts";
+import { getToday } from "../modules/ui/funcitons.ts";
 
 async function requestDate(date: string)
 {
@@ -17,15 +18,16 @@ async function requestDate(date: string)
   return playlists;  
 }
 
+
 function renderPlaylists(playlists: Array<ISnapshot>)
 {
   return playlists.map(playlist => renderPlaylist(playlist));
 }
 
-function renderPlaylist(playlist: ISnapshot)
+function renderPlaylist(snap: ISnapshot)
 {
   return (
-    <Playlist index={0} info={playlist}/>
+    <Playlist index={0} id={snap.hash} info={snap}/>
   )
 }
 
@@ -36,8 +38,9 @@ export default function Renderer()
     const playlistElements = renderPlaylists(playlists);
 
     renderTarget.innerHTML = "";
-    playlistElements.forEach(element => render(element, renderTarget));
-    // either return list of playlists and render it onto the render target
+    // render "Sorry, but I found no snapssnapssnapssnapssnapssnapssnapssnapssnaps!"
+    // const elemes = playlistElements.map(elem => [elem, elem, elem, elem, elem]).flat();
+    render(playlistElements, renderTarget);
   }, []);
 
   if (IS_BROWSER)
@@ -46,9 +49,13 @@ export default function Renderer()
 
     if(!renderTarget)
       return (
-        <DateSelection callback={() => {}}/>
+        <div>
+          <DateSelection callback={() => {}}/>
+          Render area not found
+        </div>
       )
 
+    changeCallback(renderTarget, getToday());
     return (
       <div>
         <DateSelection callback={(date: string) => {changeCallback(renderTarget, date)}}/>

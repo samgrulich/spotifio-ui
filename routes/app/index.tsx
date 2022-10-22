@@ -28,35 +28,9 @@ export default function Playlists({ data }: PageProps<IUser>)
   return (
     <div class={tw('group-main h-screen w-screen')}>
       <main class={tw('pt(md:24) p-0')}>
-        <div id="renderTarget" class={tw(`min-h-screen grid grid-cols(2 md:3 lg:4) mx(0 md:auto) w(sm:[100%] md:[80%] lg:[1000px]) gap(x(sm:1 md:16 lg:24) y(sm:0 md:16))`)}>
-          {/* <Playlist index={0}/> */}
-          {/* <Playlist index={1}/>
-          <Playlist index={2}/>
-          <Playlist index={3}/>
-          <Playlist index={4}/>
-          <Playlist index={5}/>
-          <Playlist index={6}/>
-          <Playlist index={7}/>
-          <Playlist index={8}/>
-          <Playlist index={9}/>
-          <Playlist index={10}/>
-          <Playlist index={11}/>
-          <Playlist index={12}/>
-          <Playlist index={13}/>
-          <Playlist index={14}/>
-          <Playlist index={15}/>
-          <Playlist index={16}/>
-          <Playlist index={17}/>
-          <Playlist index={18}/>
-          <Playlist index={19}/>
-          <Playlist index={20}/>
-          <Playlist index={21}/>
-          <Playlist index={22}/> */}
+        <div class={tw('min-h-screen')}>
+          <div id="renderTarget" class={tw(`grid grid-cols(2 md:3 lg:4) mx(0 md:auto) w(sm:[100%] md:[80%] lg:[1000px]) gap(x(sm:1 md:16 lg:24) y(sm:0 md:16))`)}></div>
         </div>
-        {/**
-         *  for each playlist in user playlist
-         *  show playlist
-         */}
 
         <div style={"backdrop-filter: blur(12px);"} class={tw(`sticky interactive bg-opacity-100 p-5 h-24 w-screen shadow-lg bottom-0 float-bottom left-0 lg:(translate-x-[25%] w-2/3 rounded-t-lg)`)}>
           <div class={tw(`centered sm:-top-0 md:-top-4 md:scale-[1.4]`)}>

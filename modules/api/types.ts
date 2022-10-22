@@ -78,7 +78,7 @@ export interface ISnapshotShort
   userId: string;
   hash: string;
   name: string;
-  creationDate: Date;
+  creationDate: string;
 }
 
 export interface ISnapshotInfo
@@ -86,7 +86,7 @@ export interface ISnapshotInfo
   name: string;
   previousSnap: string;
   description: string;
-  color: string;
+  // color: string;
   creationDate: string;
   cover: Array<Image>;
 }
@@ -100,7 +100,7 @@ export interface ISnapshot
   description: string;
   public: boolean;
   color: Color;
-  creationDate: Date;
+  creationDate: string;
   cover: Array<Image>;
   chunks: IChunks; 
 }
@@ -131,7 +131,7 @@ export interface IAlbum
   id: string;
   name: string;
   totalTracks: number;
-  releaseDate: Date;
+  releaseDate: string;
   // aviableMarkets: Array<string>;
   cover: Array<Image>;
   // restrictions?: {reason: string};
