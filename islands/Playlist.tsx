@@ -3,8 +3,7 @@ import { h } from "preact";
 import { tw } from "twind";
 
 import Disc from "../components/VinylDisc.tsx";
-import Track from "./Track.tsx";
-import { randomColor } from "../modules/ui/funcitons.ts";
+import { randomColor } from "../modules/ui/functions.ts";
 import { ISnapshotInfo } from "../modules/api/types.ts";
 
 
@@ -18,6 +17,7 @@ export default function Playlist(props: {index?: number, id: string, info: ISnap
   const info = {...props.info, cover};
   const infoParams = new URLSearchParams(info);
 
+  // img scale-1.01: because of bg scaling issues
   return (
     <div class={tw(`h-44 w-44 sm:(scale-[.8]) md:(scale-[.9]) lg:(scale-[1]) relative rounded-full transition-all delay-[${index * 100}ms] primary iterable`)}>
       <a href={`/app/detail/${props.id}?${infoParams.toString()}`}>
@@ -25,7 +25,7 @@ export default function Playlist(props: {index?: number, id: string, info: ISnap
           <Disc size={40} color={colorId}/>
         </div>
         <div class={tw(`absolute rounded-2xl`, bg)}>
-          <img class={tw(`h-44 w-44 rounded-lg text(xs gray-900)`)} src={cover} alt="Playlist cover"/>
+          <img class={tw(`h-44 w-44 rounded-lg text(xs gray-900) scale-[1.01]`)} src={cover} alt="Playlist cover"/>
         </div>
       </a>
     </div>

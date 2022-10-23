@@ -2,7 +2,7 @@
 import preact, { h } from "preact";
 import { tw } from "twind";
 import Disc from "./VinylDisc.tsx";
-import { randomColor } from "../modules/ui/funcitons.ts";
+import { randomColor } from "../modules/ui/functions.ts";
 
 export default function VinylBackground(props: {vinylAmount: number, height?: number, discSize: [min: number, max: number], style?: string, discsStyle?: string, children?: preact.JSX.Element | preact.JSX.Element[]})
 {

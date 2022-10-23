@@ -4,7 +4,7 @@ import { tw } from "@twind";
 import { Handlers, HandlerContext } from "$fresh/server.ts";
 import { parseCookies } from "../modules/functions.ts";
 import VinylBackground from "../components/VinylBackground.tsx";
-import { randomElementWeiged } from "../modules/ui/funcitons.ts";
+import { randomElementWeiged } from "../modules/ui/functions.ts";
 import MoveTo from "../islands/AnimateScroll.tsx";
 import Image from "../components/TapedImage.tsx";
 import Paragraph from "../components/IntroParagraph.tsx";

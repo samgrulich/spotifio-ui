@@ -9,11 +9,17 @@ import Player from "../../components/VinylPlayer.tsx";
 import { HandlerContext, Handlers, PageProps } from "$fresh/server.ts";
 import { getApi } from "../../modules/api/functions.ts";
 import { IUser } from "../../modules/api/types.ts";
+import { parseCookieHeader } from "../../modules/functions.ts";
 
 
 export const handler: Handlers<IUser> = {
   async GET(req: Request, ctxt: HandlerContext<IUser>)
   {
+    const cookies = parseCookieHeader(req.headers);
+    
+    if (!Object.keys(cookies).includes("userData"))
+      return Response.redirect(new URL("/auth/connect", req.url));
+
     const res = await getApi("/users/detail", req.headers);
     if(!res.ok)
       throw Error(await res.text());
@@ -34,7 +40,7 @@ export default function Playlists({ data }: PageProps<IUser>)
 
         <div style={"backdrop-filter: blur(12px);"} class={tw(`sticky interactive bg-opacity-100 p-5 h-24 w-screen shadow-lg bottom-0 float-bottom left-0 lg:(translate-x-[25%] w-2/3 rounded-t-lg)`)}>
           <div class={tw(`centered sm:-top-0 md:-top-4 md:scale-[1.4]`)}>
-            <a href="/app/detail">
+            <a href="/app">
               <Player style="border(solid coolGray-900 1) shadow(md)"/>
             </a>
           </div>
@@ -52,11 +58,10 @@ export default function Playlists({ data }: PageProps<IUser>)
           <div class={tw(`absolute right-0 tranlate-x-1/2`)}>
             
             <div class={tw(`group-user h-16 w-auto mr(2 md:10) relative right-0 inline-flex`)}>
-              <img class={tw(`w-10 h-10 my-auto rounded-full bg-black`)} src={data.cover[0].url} alt=" " /> 
+              <img class={tw(`w-10 h-10 my-auto rounded-full bg-black sm:hidden md:block`)} src={data.cover[0].url} alt=" " /> 
               <span class={tw(`my-auto mx-4`)}>{data.name}</span>
               <div class={tw(`absolute p-3 top-0 interactive bg-black rounded-t-lg opacity-0 -translate-y-2/3 group-user-hover:(opacity-100 -translate-y-full transition-all duration-200 ease-in-out)`)}>
-                details   
-                more <br />
+                details <br />  
                 more <br />
                 more <br />
               </div> 
