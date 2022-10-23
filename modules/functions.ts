@@ -19,3 +19,11 @@ export function parseCookieHeader(headers: Headers): Record<string, any>
 
   return cookies;
 }
+
+export function parseParams(params: URLSearchParams): Record<string, any>
+{
+  const paramsObj: Record<string, any> = {};
+  params.forEach((val, key) => paramsObj[key] = val);
+
+  return paramsObj;
+}

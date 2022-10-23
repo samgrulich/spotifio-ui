@@ -11,7 +11,7 @@ export default function Track(props: {trackId: string, theme?: 0 | 1})
       <td>
       <iframe 
         style="border-radius:12px" 
-        class={tw``}
+        class={tw('lg:(relative left-1/2 -translate-x-1/2) max-w-[800px]')}
         src={`https://open.spotify.com/embed/track/${props.trackId}?utm_source=generator&theme=${theme}`}
         width="100%" 
         height="90" 

@@ -83,9 +83,9 @@ export interface ISnapshotShort
 
 export interface ISnapshotInfo
 {
-  name: string;
   previousSnap: string;
   description: string;
+  name: string;
   // color: string;
   creationDate: string;
   cover: Array<Image>;
