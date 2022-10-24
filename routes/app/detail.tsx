@@ -5,6 +5,7 @@ import { PageProps, RouteConfig } from "$fresh/server.ts";
 
 import Track from "../../islands/Track.tsx";
 import Scroller from "../../islands/InfiniteScroller.tsx";
+import Player from "../../islands/AudioPlayer.tsx";
 import { parseParams } from "../../modules/functions.ts";
 
 
@@ -34,7 +35,8 @@ export default function Detail(props: PageProps)
       </div>
       
       {/* <h1 class={tw('relative left-1/2 -translate-x-1/2 text-2xl')}>Songs</h1>  */}
-      <div id="tracksRenderTarget" class={tw('flex w-[120%] -translate-x-[10%] h-full flex-wrap')}></div>
+      <div id="tracksRenderTarget" class={tw('flex w-[120%] -translate-x-[4%] h-full flex-wrap')}></div>
+      <Player />
       <Scroller hash={info.hash}/>
     </div>
   );
