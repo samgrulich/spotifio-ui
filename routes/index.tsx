@@ -43,7 +43,7 @@ export default function Home() {
         <VinylBackground vinylAmount={84} discSize={[8, 25]} height={headerBackgroundHeight} style={"p-4 relative"}> 
         <div class={tw('md:(translate-y-1/2 centerX w-[50rem] h-[25vh])')}>
           <div class={tw(`inline-block p-5 rounded-xl bg-black bg-opacity-100 centerX translate-y-[20vh]`)} style="backdrop-filter: blur(12px)">
-            <h1 class={tw('sm:text-4xl md:text-8xl p-2')}>Go back in time!</h1>
+            <h1 class={tw('sm:text-4xl md:text-8xl p-2 font-bold')}>Go back in time!</h1>
             <p class={tw('pl-4')}>{caption}</p>
           </div>
           <a href={connectURL}>

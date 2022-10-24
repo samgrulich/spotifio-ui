@@ -21,7 +21,6 @@ export default function DateSelection(props: {callback: (date: string) => void})
   return (
     <div class={tw(style)}>
       <input type="date" name="dateSelection" id="dateSelection"
-        pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" 
         value={todayString} max={todayString} class={tw(inputStyle)}
         onChange={(event) => {
           const date = (event.target as HTMLInputElement).value

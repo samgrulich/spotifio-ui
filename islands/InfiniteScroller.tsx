@@ -8,22 +8,22 @@ import Track from "./Track.tsx";
 import { IChunk } from "../modules/api/types.ts"
 
 
-function renderTrack(id: string, theme: 0 | 1)
+function renderTrack(track: {id: string, name: string, preview_url: string | null, cover: Array<Record<string, any>>}, theme: 0 | 1)
 {
   return (
-    <Track trackId={id} theme={theme}/>
+    <Track track={track} theme={theme}/>
   )
 }
 
-function renderTracks(tracks: Array<string>)
+function renderTracks(tracks: Array<any>)
 {
-  return tracks.map((trackId, index) => renderTrack(trackId, index % 2 as 0 | 1))
+  return tracks.map((track, index) => renderTrack(track, index % 2 as 0 | 1))
 }
 
 async function renderChunk(renderTarget: HTMLElement, snapId: string, chunkId: string)
 {
-  const chunkData = await getChunk(snapId, chunkId);
-  const tracksElements = renderTracks(chunkData.data?.tracks ?? []);
+  const chunkData = await getChunk(snapId, chunkId) as any;
+  const tracksElements = renderTracks(chunkData.tracks ?? []);
 
   render(tracksElements, renderTarget);
 }
@@ -56,5 +56,7 @@ export default async function Scroller(props: {hash: string})
     return;
   
   const snapInfo = await getSnapInfo(props.hash);
-  // renderChunk(tracksRenderTarget, props.hash, snapInfo.chunks.lastChunk);
+  const chunk = await getChunk(props.hash, snapInfo.chunks.lastChunk);
+  console.log(chunk);
+  renderChunk(tracksRenderTarget, props.hash, snapInfo.chunks.lastChunk);
 }

@@ -3,6 +3,12 @@ import * as colors from "twind/colors";
 
 const bannedColors = ["white", "black"];
 
+export function randomValue(min=0, max=1)
+{
+  const random = Math.random();
+  return random * (max - min) + min;
+}
+
 export function randomColor(fallbackColor="amber")
 {
   const colorIds = Object.keys(colors);
