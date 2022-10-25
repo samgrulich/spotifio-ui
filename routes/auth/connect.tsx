@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from "preact";
 import { Handlers, HandlerContext } from "$fresh/server.ts";
-import { fetchApi, getApi } from "../../modules/api/functions.ts";
+import { getApi } from "../../modules/api/functions.ts";
 
 const SCOPES = "user-read-private user-read-email playlist-modify-private playlist-read-private";
 export const handler: Handlers = {

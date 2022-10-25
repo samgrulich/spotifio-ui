@@ -1,5 +1,5 @@
-import { HandlerContext, Handlers, RouteConfig } from "$fresh/server.ts";
-import { getApi, postApi } from "../../modules/api/functions.ts";
+import { RouteConfig } from "$fresh/server.ts";
+import { getApi } from "../../modules/api/functions.ts";
 
 
 export function parseEndpoints(url: string)

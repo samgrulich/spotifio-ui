@@ -16,7 +16,7 @@ function Option(props: {date: string})
 export default function DateSelection(props: {callback: (date: string) => void}) 
 {
   const todayString = getToday();
-  const style = IS_BROWSER ? apply("inline") : apply("inline animate-pulse");
+  const style = IS_BROWSER ? "inline": "inline animate-pulse";
 
   return (
     <div class={tw(style)}>

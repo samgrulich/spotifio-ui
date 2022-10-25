@@ -26,6 +26,10 @@ export const handler: Handlers = {
     const appURL = new URL("/app", req.url);
 
     const userData = {UserId: data["id"], Token: data["token"], country: data["country"]};
+
+    if (!userData)
+      return Response.redirect("/");
+
     const headers = {"Set-Cookie": `userData=${JSON.stringify(userData)}; Max-Age=3600; Path=/`}
 
     const pageResponse = data ? createRedirectResponse(appURL.href, headers) : await ctxt.render();    

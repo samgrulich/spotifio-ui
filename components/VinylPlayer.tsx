@@ -7,7 +7,7 @@ export default function Player(props: {style?: string})
 {
   return (
     <div class={tw('w-20 h-26 bg-gray-900 rounded-sm', props.style)}>
-      <Disc size={14} padding={[1.5, 1.5]} style={"bg-gray-700 mx-1.5 mt-1.5 rounded-sm"}/>
+      <Disc size={14} padding={[1.5, 1.5]} tw={"bg-gray-700 mx-1.5 mt-1.5 rounded-sm"}/>
 
       <div class={tw("flex mt-3 pb-2 transtlate-y-1 py-auto space-x-1 justify-center")}>
         <div class={tw("w-7 h-1 bg-coolGray-700 mr-3")}></div>

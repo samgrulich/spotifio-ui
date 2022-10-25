@@ -1,5 +1,4 @@
 import { MiddlewareHandlerContext } from "$fresh/server.ts";
-import { parseCookies } from "../modules/functions.ts";
 
 interface State {
   cookies: string;

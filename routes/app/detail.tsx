@@ -1,6 +1,6 @@
 /** @jsx h */
 import { h } from "preact";
-import { tw } from "twind";
+import { tw } from "@twind";
 import { PageProps, RouteConfig } from "$fresh/server.ts";
 
 import Track from "../../islands/Track.tsx";
@@ -23,7 +23,11 @@ export default function Detail(props: PageProps)
 
   return (
     <div class={tw(`p-10`)}>
-      <div class={tw('flex md:space-x-10 w-10/12 mx-auto mt-10 sm:flex-wrap md:flex-nowrap mb(20 lg:40)')}>
+      <div class={tw(`
+        flex flex-wrap
+        w-10/12 mx-auto mt-10 mb(20 lg:40)
+        md:(space-x-10 flex-nowrap)
+      `)}>
         <div class={tw('sm:mb-10')}>
           <img src={info.cover} alt="Playlist cover" class={tw("w-60 rounded-lg")}/>
         </div>

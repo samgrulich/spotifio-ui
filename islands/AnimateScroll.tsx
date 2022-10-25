@@ -1,11 +1,14 @@
 /** @jsx h */
 import { h } from "preact";
-import { useCallback, useEffect } from "preact/hooks";
-import { tw } from "twind";
+import { useCallback } from "preact/hooks";
+import { tw } from "@twind";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 
 
-export default function MoveTo(props: {children?: string | preact.JSX.Element | preact.JSX.Element[], targetId: string})
+export default function MoveTo(props: {
+  targetId: string, 
+  children?: string | preact.JSX.Element | preact.JSX.Element[]
+})
 {
   if (!IS_BROWSER)
   {
@@ -16,7 +19,7 @@ export default function MoveTo(props: {children?: string | preact.JSX.Element | 
 
   const targetElement = window.document.getElementById(props.targetId);
   const target = targetElement?.getBoundingClientRect();
-  const targetY = target?.top ?? 0 + (target?.height ?? 0) / 2;
+  const targetY = target?.y ?? 0 + (target?.height ?? 0) / 2;
   
   const animate = useCallback(() => {
     window.scrollTo({
