@@ -10,7 +10,7 @@ export default function testPage()
 {
   return (
     <div class={tw("")}>
-      <div class={tw("bg-white")}>
+      <div class={tw("bg-black")}>
       <Disc size={64} style={"bg-coolGray-800"}/>
       </div>
       <div class={tw('relative p-20 w-screen bg-white')}>
