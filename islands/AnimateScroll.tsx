@@ -21,12 +21,12 @@ export default function MoveTo(props: {
   const target = targetElement?.getBoundingClientRect();
   const targetY = target?.y ?? 0 + (target?.height ?? 0) / 2;
   
-  const animate = useCallback(() => {
+  const animate = () => {
     window.scrollTo({
       top: targetY, 
       behavior: "smooth"
     });
-  }, []);
+  };
 
   return (
     <div onClick={animate} class={tw('cursor-pointer text-underline')}>

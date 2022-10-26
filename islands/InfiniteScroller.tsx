@@ -66,6 +66,13 @@ export default async function Scroller(props: {hash: string})
   let nextChunk = chunkData.chunk.previousChunk;
   tracks = allTracks;
 
+  if(allTracks.length < 20)
+  {
+    const {chunkData, allTracks} = await renderChunk(tracksRenderTarget, tracks, props.hash, nextChunk);
+    nextChunk = chunkData.chunk.previousChunk;
+    tracks = allTracks;
+  }
+
   window.onscroll = async (e) => {
     const rect = document.body.getBoundingClientRect();
     
