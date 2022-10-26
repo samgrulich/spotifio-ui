@@ -10,8 +10,8 @@ export const Main = {
     centery: `absolute ${centerY}`,
 
     "center-r": `relative ${center}`,
-    "centerx-r": `absolute ${centerX}`,
-    "centery-r": `absolute ${centerY}`,
+    "centerx-r": `relative ${centerX}`,
+    "centery-r": `relative ${centerY}`,
 
     untruncate: "overflow-visible whitespace-normal",
 

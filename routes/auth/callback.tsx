@@ -2,18 +2,8 @@
 import { h } from "preact";
 import { Handlers, HandlerContext } from "$fresh/server.ts";
 import { getApi } from "../../modules/api/functions.ts";
+import { createRedirectResponse } from "../../modules/functions.ts";
 
-
-function createRedirectResponse(url: string, headers?: Record<string, string>): Response
-{
-  return new Response("Redirecting...", {
-    status: 308,
-    headers: {
-      "Location": url,
-      ...headers
-    }
-  });
-}
 
 export const handler: Handlers = {
   async GET(req: Request, ctxt: HandlerContext): Promise<Response>

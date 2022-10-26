@@ -55,14 +55,14 @@ export default function Playlists({ data }: PageProps<IUser>)
             lg:(translate-x-[25%] w-2/3 rounded-t-lg)
           `)}
         >
-          <div class={tw(`centerx sm:top-0 md:-top-16 md:scale-[1.4]`)}>
+          <div class={tw(`centerx sm:-top-14 md:-top-16 md:scale-[1.4]`)}>
             <a href="/app">
               <Player style="border(solid coolGray-900 1) shadow(md)"/>
             </a>
           </div>
 
           <div class={tw(`
-            absolute sm:(top-full) left-1/2 
+            absolute sm:(top-[60%]) left-1/2 
             md:(block top-1/2 left-24 -translate-y-1/2)
           `)}>
             <a href="/">
@@ -97,9 +97,8 @@ export default function Playlists({ data }: PageProps<IUser>)
                 -translate-y-2/3 
                 group-user-hover:(opacity-100 -translate-y-full transition-all duration-200 ease-in-out)
               `)}>
-                details <br />  
-                more <br />
-                more <br />
+                <a href="/">Home</a> <br />
+                {/* <a href="/auth/logout">Log out</a> <br /> */}
               </div> 
             </div>
             

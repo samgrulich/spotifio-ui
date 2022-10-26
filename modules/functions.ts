@@ -27,3 +27,14 @@ export function parseParams(params: URLSearchParams): Record<string, any>
 
   return paramsObj;
 }
+
+export function createRedirectResponse(url: string, headers?: Record<string, string>): Response
+{
+  return new Response("Redirecting...", {
+    status: 308,
+    headers: {
+      "Location": url,
+      ...headers
+    }
+  });
+}
