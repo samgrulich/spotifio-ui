@@ -10,7 +10,9 @@ export default function testPage()
 {
   return (
     <div class={tw("")}>
-      {/* <Disc size={16} style={"bg-coolGray-800"}/> */}
+      <div class={tw("bg-black")}>
+      <Disc size={64} style={"bg-coolGray-800"}/>
+      </div>
       <div class={tw('relative p-20 w-screen bg-white')}>
         <div class={tw('absolute mx-[90%] mt-[10rem] p-5 bg-red-500')}></div>
         {/* <Disc size={15} color={"red"}/> */}

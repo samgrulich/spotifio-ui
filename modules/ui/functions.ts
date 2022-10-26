@@ -3,6 +3,12 @@ import * as colors from "twind/colors";
 
 const bannedColors = ["white", "black"];
 
+export function randomValue(min=0, max=1)
+{
+  const random = Math.random();
+  return random * (max - min) + min;
+}
+
 export function randomColor(fallbackColor="amber")
 {
   const colorIds = Object.keys(colors);
@@ -31,4 +37,11 @@ export function randomElementWeiged(selection: Record<string, number>)
 
   const index = Math.floor(Math.random() * weighedSelection.length);
   return weighedSelection[index];
+}
+
+export function getToday(): string
+{
+  const date = new Date();
+  const str = date.toISOString().split("T")[0];
+  return str;
 }

@@ -11,3 +11,30 @@ export function parseCookies(cookie: string): Record<string, any>
 
   return result;
 }
+
+export function parseCookieHeader(headers: Headers): Record<string, any>
+{
+  const cookiesRaw = headers.get("cookie") || "";    
+  const cookies = parseCookies(cookiesRaw);
+
+  return cookies;
+}
+
+export function parseParams(params: URLSearchParams): Record<string, any>
+{
+  const paramsObj: Record<string, any> = {};
+  params.forEach((val, key) => paramsObj[key] = val);
+
+  return paramsObj;
+}
+
+export function createRedirectResponse(url: string, headers?: Record<string, string>): Response
+{
+  return new Response("Redirecting...", {
+    status: 308,
+    headers: {
+      "Location": url,
+      ...headers
+    }
+  });
+}

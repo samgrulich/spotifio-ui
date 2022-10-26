@@ -1,6 +1,6 @@
 /** @jsx h */
 import { h } from "preact";
-import { ErrorPageProps } from "$fresh/server.ts";
+import { ErrorPageProps, Handlers } from "$fresh/server.ts";
 
 export default function ServerError({error} : ErrorPageProps)
 {

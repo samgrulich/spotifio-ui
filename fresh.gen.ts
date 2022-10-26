@@ -4,43 +4,49 @@
 
 import * as $0 from "./routes/_400.tsx";
 import * as $1 from "./routes/_500.tsx";
-import * as $2 from "./routes/_middleware.ts";
-import * as $3 from "./routes/app/detail.tsx";
-import * as $4 from "./routes/app/index.tsx";
-import * as $5 from "./routes/auth/callback.tsx";
-import * as $6 from "./routes/auth/connect.tsx";
-import * as $7 from "./routes/auth/login.tsx";
-import * as $8 from "./routes/auth/register.tsx";
+import * as $2 from "./routes/_app.tsx";
+import * as $3 from "./routes/_middleware.ts";
+import * as $4 from "./routes/api/index.ts";
+import * as $5 from "./routes/app/detail.tsx";
+import * as $6 from "./routes/app/index.tsx";
+import * as $7 from "./routes/auth/callback.tsx";
+import * as $8 from "./routes/auth/connect.tsx";
 import * as $9 from "./routes/index.tsx";
-import * as $10 from "./routes/test.tsx";
-import * as $$0 from "./islands/Counter.tsx";
-import * as $$1 from "./islands/DateSelection.tsx";
-import * as $$2 from "./islands/MusicControls.tsx";
-import * as $$3 from "./islands/Playlist.tsx";
-import * as $$4 from "./islands/PlaylistsRender.tsx";
-import * as $$5 from "./islands/Track.tsx";
+import * as $10 from "./routes/spotify.tsx";
+import * as $11 from "./routes/test.tsx";
+import * as $$0 from "./islands/AnimateScroll.tsx";
+import * as $$1 from "./islands/AudioPlayer.tsx";
+import * as $$2 from "./islands/DateSelection.tsx";
+import * as $$3 from "./islands/InfiniteScroller.tsx";
+import * as $$4 from "./islands/Playlist.tsx";
+import * as $$5 from "./islands/PlaylistsRender.tsx";
+import * as $$6 from "./islands/Track.tsx";
+import * as $$7 from "./islands/test.tsx";
 
 const manifest = {
   routes: {
     "./routes/_400.tsx": $0,
     "./routes/_500.tsx": $1,
-    "./routes/_middleware.ts": $2,
-    "./routes/app/detail.tsx": $3,
-    "./routes/app/index.tsx": $4,
-    "./routes/auth/callback.tsx": $5,
-    "./routes/auth/connect.tsx": $6,
-    "./routes/auth/login.tsx": $7,
-    "./routes/auth/register.tsx": $8,
+    "./routes/_app.tsx": $2,
+    "./routes/_middleware.ts": $3,
+    "./routes/api/index.ts": $4,
+    "./routes/app/detail.tsx": $5,
+    "./routes/app/index.tsx": $6,
+    "./routes/auth/callback.tsx": $7,
+    "./routes/auth/connect.tsx": $8,
     "./routes/index.tsx": $9,
-    "./routes/test.tsx": $10,
+    "./routes/spotify.tsx": $10,
+    "./routes/test.tsx": $11,
   },
   islands: {
-    "./islands/Counter.tsx": $$0,
-    "./islands/DateSelection.tsx": $$1,
-    "./islands/MusicControls.tsx": $$2,
-    "./islands/Playlist.tsx": $$3,
-    "./islands/PlaylistsRender.tsx": $$4,
-    "./islands/Track.tsx": $$5,
+    "./islands/AnimateScroll.tsx": $$0,
+    "./islands/AudioPlayer.tsx": $$1,
+    "./islands/DateSelection.tsx": $$2,
+    "./islands/InfiniteScroller.tsx": $$3,
+    "./islands/Playlist.tsx": $$4,
+    "./islands/PlaylistsRender.tsx": $$5,
+    "./islands/Track.tsx": $$6,
+    "./islands/test.tsx": $$7,
   },
   baseUrl: import.meta.url,
 };
