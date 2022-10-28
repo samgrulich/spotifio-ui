@@ -13,16 +13,18 @@ export enum Method
   post = "post"
 }
 
-export function fetchApi(endpoint: string, reqHeaders: Headers, method: Method, data?: any, searchParams?: URLSearchParams)
+export function fetchApi(endpoint: string, reqHeaders: Headers, ip: string, method: Method, data?: any, searchParams?: URLSearchParams)
 {
   const url = new URL(endpoint, API_URL);
+  console.log(url);
   const cookies = parseCookieHeader(reqHeaders);
   const userData = JSON.parse(cookies["userData"] ?? "{}");
   const options: Record<string, any> = {
     method,
     headers: {
       "Content-Type": "application/json",
-      ...userData
+      ...userData,
+      "UserIp" : ip,
     }
   }
 
@@ -67,12 +69,12 @@ export function fetchApi(endpoint: string, reqHeaders: Headers, method: Method, 
     });
 }
 
-export function getApi(endpoint: string, reqHeaders: Headers, searchParams?: URLSearchParams)
+export function getApi(endpoint: string, reqHeaders: Headers, ip: string, searchParams?: URLSearchParams)
 {
-  return fetchApi(endpoint, reqHeaders, Method.get, "", searchParams);
+  return fetchApi(endpoint, reqHeaders, ip, Method.get, "", searchParams);
 }
 
-export function postApi(endpoint: string, reqHeaders: Headers, data: any)
+export function postApi(endpoint: string, reqHeaders: Headers, ip: string, data: any)
 {
-  return fetchApi(endpoint, reqHeaders, Method.post, data);
+  return fetchApi(endpoint, reqHeaders, ip, Method.post, data);
 }

@@ -32,7 +32,7 @@ export const handler: Handlers = {
 const captions = {
   "At least with your music": 50,
   "Well... Technically": 45,
-  "Theretically? yes. Actually? no.": 5,
+  "Theoretically? yes. Actually? no.": 5,
 }
 
 export default function Home() {

@@ -10,7 +10,7 @@ export const handler: Handlers = {
   {
     const url = new URL(req.url);
     const params = url.searchParams;
-    const response = await getApi("/auth/callback", req.headers, params);
+    const response = await getApi("/auth/callback", req.headers, (ctxt.remoteAddr as Record<string, any>)["hostname"], params);
 
     const data = await response.json();
     const appURL = new URL("/app", req.url);

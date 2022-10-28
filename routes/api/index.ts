@@ -1,4 +1,4 @@
-import { RouteConfig } from "$fresh/server.ts";
+import { RouteConfig, HandlerContext } from "$fresh/server.ts";
 import { getApi } from "../../modules/api/functions.ts";
 
 
@@ -22,7 +22,7 @@ export const config: RouteConfig = {
   routeOverride: "/api*"
 };
 
-export async function handler(req: Request)
+export async function handler(req: Request, ctxt: HandlerContext)
 {
   const url = new URL(req.url);
   // const params = url.searchParams;
@@ -34,6 +34,8 @@ export async function handler(req: Request)
 
   const endpointAPI = parseEndpoints(endpoint);
 
-  const resp = await getApi(endpointAPI, req.headers);
+  const ip = (ctxt.remoteAddr as Record<string, any>)["hostname"];
+  // todo: add an ip hash
+  const resp = await getApi(endpointAPI, req.headers, ip);
   return resp;
 }

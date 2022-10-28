@@ -22,7 +22,7 @@ export const handler: Handlers<IUser> = {
     else if (cookies["userData"] == "{}")
       return Response.redirect(new URL("/auth/connect", req.url));
 
-    const res = await getApi("/users/detail", req.headers);
+    const res = await getApi("/users/detail", req.headers, (ctxt.remoteAddr as Record<string, any>)["hostname"]);
     if(!res.ok)
       throw Error(await res.text());
 
