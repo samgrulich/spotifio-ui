@@ -1,5 +1,3 @@
-import "dotenv/load.ts";
-
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { apply, Configuration, setup } from "twind";
 import * as colors from "twind/colors";
@@ -8,8 +6,7 @@ export * from "twind";
 
 
 const IS_SERVER = !IS_BROWSER;
-// const isDebug = IS_SERVER ? Deno.env.get("IS_DEBUG") == "true" : false;
-const isDebug = false;
+const isDebug = IS_SERVER ? Deno.env.get("IS_DEBUG") == "true" : false;
 
 export const config: Configuration = {
   preflight: {
