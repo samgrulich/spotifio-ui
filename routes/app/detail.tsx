@@ -1,9 +1,11 @@
 /** @jsx h */
+
+// show snapshot details
+
 import { h } from "preact";
 import { tw } from "@twind";
 import { PageProps, RouteConfig } from "$fresh/server.ts";
 
-import Track from "../../islands/Track.tsx";
 import Scroller from "../../islands/InfiniteScroller.tsx";
 import Player from "../../islands/AudioPlayer.tsx";
 import { parseParams } from "../../modules/functions.ts";
@@ -19,7 +21,6 @@ export default function Detail(props: PageProps)
   const info = parseParams(params);
 
   const date = new Date(info.creationDate);
-  // const snap = await getSnapInfo(props.url.host, id);
 
   return (
     <div class={tw(`p-10`)}>
@@ -41,7 +42,7 @@ export default function Detail(props: PageProps)
       {/* <h1 class={tw('relative left-1/2 -translate-x-1/2 text-2xl')}>Songs</h1>  */}
       <div id="tracksRenderTarget" class={tw('flex w-[120%] -translate-x-[4%] h-full flex-wrap')}></div>
       <Player />
-      <Scroller hash={info.hash}/>
+      <script>{Scroller({hash: info.hash})}</script>
     </div>
   );
 }

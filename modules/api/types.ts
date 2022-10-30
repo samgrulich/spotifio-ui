@@ -1,3 +1,5 @@
+// my database stored types
+
 export enum Color
 {
   white,

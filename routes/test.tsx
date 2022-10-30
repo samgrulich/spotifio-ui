@@ -1,10 +1,16 @@
 /** @jsx h */
 import { h } from "preact";
 import { tw, apply } from "@twind";
-import DateSelection from "../islands/DateSelection.tsx"; 
+
+import { RouteConfig } from "$fresh/server.ts";
+
 import Disc from "../components/VinylDisc.tsx";
 import VinylBackground from "../components/VinylBackground.tsx";
 
+
+export const config: RouteConfig = {
+  routeOverride: ""
+};
 
 export default function testPage()
 {
@@ -51,7 +57,7 @@ export default function testPage()
       <div>main</div>
       <div>main</div>
 
-      <VinylBackground vinylAmount={20} discSize={[8, 16]} style={"w-screen h-20"}> 
+      <VinylBackground vinylAmount={20} discSize={[8, 16]} tw={"w-screen h-20"}> 
       <div>Ahoj</div>
       <div>Ahoj</div>
       <div>Ahoj</div>

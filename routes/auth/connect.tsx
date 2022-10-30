@@ -1,18 +1,23 @@
 /** @jsx h */
+
+// initialize server-api-spotify connection 
+// then redirect to spotify auth
+
 import { h } from "preact";
 import { Handlers, HandlerContext } from "$fresh/server.ts";
-import { getApi } from "../../modules/api/functions.ts";
 
-const SCOPES = "user-read-private user-read-email playlist-modify-private playlist-read-private";
+import { getApi } from "../../modules/api/functions.ts";
+import { parseIP } from "../../modules/ui/functions.ts";
+
+
 export const handler: Handlers = {
   async GET(req: Request, ctxt: HandlerContext): Promise<Response>
   {
-    const resp = await getApi("/auth/connect", req.headers, (ctxt.remoteAddr as Record<string, any>)["hostname"]);
+    const resp = await getApi("/auth/connect", req.headers, parseIP(ctxt));
 
-    if (resp.status != 200)
+    if (!resp.ok)
     {
-      // todo: return error
-      return await ctxt.render();
+      throw new Error(await resp.text());
     }
 
     const data = await resp.json();

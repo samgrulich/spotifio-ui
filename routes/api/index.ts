@@ -1,5 +1,10 @@
+// deno-lint-ignore-file no-explicit-any
+
+// just a go through ep - birdge between api and client
+
 import { RouteConfig, HandlerContext } from "$fresh/server.ts";
 import { getApi } from "../../modules/api/functions.ts";
+import { parseIP } from "../../modules/ui/functions.ts";
 
 
 export function parseEndpoints(url: string)
@@ -25,7 +30,6 @@ export const config: RouteConfig = {
 export async function handler(req: Request, ctxt: HandlerContext)
 {
   const url = new URL(req.url);
-  // const params = url.searchParams;
   const endpoint = url.pathname.replace("api/", "");
   console.log("ep", endpoint);
 
@@ -34,7 +38,7 @@ export async function handler(req: Request, ctxt: HandlerContext)
 
   const endpointAPI = parseEndpoints(endpoint);
 
-  const ip = (ctxt.remoteAddr as Record<string, any>)["hostname"];
+  const ip = parseIP(ctxt);
   // todo: add an ip hash
   const resp = await getApi(endpointAPI, req.headers, ip);
   return resp;

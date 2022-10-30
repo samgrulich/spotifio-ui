@@ -5,7 +5,7 @@ interface State {
 }
 
 export async function handler(
-  req: Request,
+  _req: Request,
   ctxt: MiddlewareHandlerContext<State>,
 ) {
   try
@@ -18,6 +18,4 @@ export async function handler(
     console.log(err);
     return new Response("This is wrong.. I shouldn't be here");
   }
-
-  // error handling
 }

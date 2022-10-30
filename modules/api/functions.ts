@@ -1,7 +1,11 @@
+// deno-lint-ignore-file no-explicit-any
+
+// functions for api connection
+
 import "dotenv/load.ts";
 import { parseCookieHeader } from "../functions.ts";
 
-// TODO: implement non server based alternative or api request ep
+
 const API_URL = Deno.env.get("API_BASE") ?? "";
 
 if (!API_URL)
@@ -63,9 +67,7 @@ export function fetchApi(endpoint: string, reqHeaders: Headers, ip: string, meth
       return res;
     })
     .catch(err => {
-      // const body = {msg: "Server communication failed", err: err.message};
       throw Error(err);
-      // return new Response(JSON.stringify(body), {status: 500});
     });
 }
 

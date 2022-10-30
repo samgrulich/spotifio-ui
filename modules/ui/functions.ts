@@ -1,3 +1,8 @@
+// deno-lint-ignore-file no-explicit-any
+
+// functions used in/by the UI elements
+
+import { HandlerContext } from "$fresh/server.ts";
 import * as colors from "twind/colors";
 
 
@@ -44,4 +49,14 @@ export function getToday(): string
   const date = new Date();
   const str = date.toISOString().split("T")[0];
   return str;
+}
+
+export function parseIP(ctxt: HandlerContext<any>)
+{
+  return (ctxt.remoteAddr as Record<string, any>)["hostname"];
+}
+
+export function fallback<T, F>(val: T, fallback: T | F): T | F
+{
+  return val ?? fallback;
 }

@@ -1,3 +1,7 @@
+// deno-lint-ignore-file no-explicit-any
+
+// functions for request/response data manipulation
+
 export function parseCookies(cookie: string): Record<string, any>
 {
   const cookieArr = cookie.split('; ');
@@ -28,12 +32,14 @@ export function parseParams(params: URLSearchParams): Record<string, any>
   return paramsObj;
 }
 
-export function createRedirectResponse(url: string, headers?: Record<string, string>): Response
+export function createRedirectResponse(url: string | URL, headers?: Record<string, string>): Response
 {
+  const href = typeof url == "string" ? url : url.href;
+
   return new Response("Redirecting...", {
     status: 308,
     headers: {
-      "Location": url,
+      "Location": href,
       ...headers
     }
   });

@@ -1,7 +1,13 @@
 /** @jsx h */
+
+// connect the user with the api-spotify_callback and the back
+// then store user credentials
+
 import { h } from "preact";
 import { Handlers, HandlerContext } from "$fresh/server.ts";
+
 import { getApi } from "../../modules/api/functions.ts";
+import { parseIP } from "../../modules/ui/functions.ts";
 import { createRedirectResponse } from "../../modules/functions.ts";
 
 
@@ -10,7 +16,7 @@ export const handler: Handlers = {
   {
     const url = new URL(req.url);
     const params = url.searchParams;
-    const response = await getApi("/auth/callback", req.headers, (ctxt.remoteAddr as Record<string, any>)["hostname"], params);
+    const response = await getApi("/auth/callback", req.headers, parseIP(ctxt), params);
 
     const data = await response.json();
     const appURL = new URL("/app", req.url);

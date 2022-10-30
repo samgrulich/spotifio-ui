@@ -1,4 +1,7 @@
 /** @jsx h */
+
+// display all users playlists
+
 import { h } from "preact";
 import { tw, apply } from "@twind";
 import { HandlerContext, Handlers, PageProps } from "$fresh/server.ts";
@@ -8,7 +11,9 @@ import Player from "../../components/VinylPlayer.tsx";
 
 import { getApi } from "../../modules/api/functions.ts";
 import { IUser } from "../../modules/api/types.ts";
-import { parseCookieHeader } from "../../modules/functions.ts";
+import { getLogoutHeaders } from "../../modules/ui/auth.ts";
+import { createRedirectResponse, parseCookieHeader } from "../../modules/functions.ts";
+import { parseIP } from "../../modules/ui/functions.ts";
 
 
 export const handler: Handlers<IUser> = {
@@ -20,9 +25,10 @@ export const handler: Handlers<IUser> = {
       return Response.redirect(new URL("/auth/connect", req.url));
 
     else if (cookies["userData"] == "{}")
-      return Response.redirect(new URL("/auth/connect", req.url));
+      return createRedirectResponse(new URL("/auth/connect", req.url), getLogoutHeaders());
 
-    const res = await getApi("/users/detail", req.headers, (ctxt.remoteAddr as Record<string, any>)["hostname"]);
+    const res = await getApi("/users/detail", req.headers, parseIP(ctxt));
+
     if(!res.ok)
       throw Error(await res.text());
 
@@ -34,6 +40,7 @@ export const handler: Handlers<IUser> = {
 export default function Playlists({ data }: PageProps<IUser>)
 {
   const userCover = data.cover[0]?.url ?? "";
+  const userCoverOpacity = userCover ? "" : "opacity-0";
 
   return (
     <div class={tw('group-main h-screen w-screen')}>
@@ -87,7 +94,7 @@ export default function Playlists({ data }: PageProps<IUser>)
             
             <div class={tw(`group-user h-16 w-auto mr(2 md:10) relative right-0 inline-flex`)}>
               <img 
-                class={tw(`w-10 h-10 my-auto rounded-full bg-black sm:hidden md:block`, userCover ? "" : "opacity-0")} 
+                class={tw(`w-10 h-10 my-auto rounded-full bg-black sm:hidden md:block`, userCoverOpacity)} 
                 src={userCover} 
                 alt=" "
               /> 
@@ -100,7 +107,7 @@ export default function Playlists({ data }: PageProps<IUser>)
                 group-user-hover:(opacity-100 -translate-y-full transition-all duration-200 ease-in-out)
               `)}>
                 <a href="/">Home</a> <br />
-                {/* <a href="/auth/logout">Log out</a> <br /> */}
+                <a href="/auth/logout">Log out</a> <br />
               </div> 
             </div>
             
