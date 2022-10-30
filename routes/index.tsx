@@ -82,9 +82,9 @@ export default function Home() {
             />
             <div class={tw('w-full')}>
               <div class={tw(`inline-flex flex(& col) centerx sm:w-full`)}>
-                <Paragraph offset="20%">We are Spotifio.</Paragraph>
+                <Paragraph offset="16%">We are Spotifio.</Paragraph>
                 <Paragraph offset="10%">A Spotify extension.</Paragraph>
-                <Paragraph offset="15%">We help you track playlists.</Paragraph>
+                <Paragraph offset="13%">We help you track playlists.</Paragraph>
                 <Paragraph offset="0">So you can see what you were listening to.</Paragraph>
               </div>
               <Image 
@@ -105,27 +105,12 @@ export default function Home() {
             </div>
           </Section>
           <Section dividertw="opacity-0" tw='inline-block centerx-r'>
-            <h2 class={tw('text(2xl md:6xl)')}>Tell your friends about us.</h2>
-            <span class={tw('centerx-r')}>Pretty please</span>
+            <h2 class={tw('text(2xl md:6xl)')}>Tell your friends about us!</h2>
+            <span class={tw('centerx-r -ml-12')}>Pretty please <span>&#128063;</span></span>
           </Section>
-          {/* <Section dividerColor="yellow" tw={'h-screen'} bg="black">
-            <h2 class={tw('intro-header')}>How to <b>use</b>?</h2>
-            <p class={tw('text(4xl gray-500)')}>Well, it's easy</p>
-            <ol class={tw('px-10 pb-5 text-3xl half-w centerx mt-4')}>
-              <li>Just <a href={connectURL}>connect</a> to your Spotify account,</li>
-              <li>And you are actually done</li>
-            </ol>
-
-            <p class={tw('text(4xl gray-500) mt-[20vh]')}>
-              Then app takes snapshots in regullar intervals <br />
-              And after that we notify you when the snapshot is ready
-            </p>
-          </Section> */}
-          <div class={tw("bg-green-900 w-screen h-8 md:-translate-x-20 absolute")}>
-            <a href={connectURL} class={tw('centerx-r')}>
-              <button class={tw('scale-[1.4] centerx px-3 py-1 bg-green-500 text-black font-bold rounded-full')}>Connect</button>
-            </a>
-          </div> 
+          <a href={connectURL} class={tw('centerx-r')}>
+            <button class={tw('scale-[1.4] centerx px-3 py-1 bg-green-500 text-black font-bold rounded-full')}>Connect</button>
+          </a>
         </div>
       </main>
     </div>
