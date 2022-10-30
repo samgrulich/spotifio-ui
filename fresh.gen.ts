@@ -11,8 +11,8 @@ import * as $5 from "./routes/app/detail.tsx";
 import * as $6 from "./routes/app/index.tsx";
 import * as $7 from "./routes/auth/callback.tsx";
 import * as $8 from "./routes/auth/connect.tsx";
-import * as $9 from "./routes/index.tsx";
-import * as $10 from "./routes/spotify.tsx";
+import * as $9 from "./routes/auth/logout.ts";
+import * as $10 from "./routes/index.tsx";
 import * as $11 from "./routes/test.tsx";
 import * as $$0 from "./islands/AnimateScroll.tsx";
 import * as $$1 from "./islands/AudioPlayer.tsx";
@@ -21,7 +21,6 @@ import * as $$3 from "./islands/InfiniteScroller.tsx";
 import * as $$4 from "./islands/Playlist.tsx";
 import * as $$5 from "./islands/PlaylistsRender.tsx";
 import * as $$6 from "./islands/Track.tsx";
-import * as $$7 from "./islands/test.tsx";
 
 const manifest = {
   routes: {
@@ -34,8 +33,8 @@ const manifest = {
     "./routes/app/index.tsx": $6,
     "./routes/auth/callback.tsx": $7,
     "./routes/auth/connect.tsx": $8,
-    "./routes/index.tsx": $9,
-    "./routes/spotify.tsx": $10,
+    "./routes/auth/logout.ts": $9,
+    "./routes/index.tsx": $10,
     "./routes/test.tsx": $11,
   },
   islands: {
@@ -46,7 +45,6 @@ const manifest = {
     "./islands/Playlist.tsx": $$4,
     "./islands/PlaylistsRender.tsx": $$5,
     "./islands/Track.tsx": $$6,
-    "./islands/test.tsx": $$7,
   },
   baseUrl: import.meta.url,
 };

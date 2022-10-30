@@ -1,10 +1,8 @@
 /** @jsx h */
 import { h } from "preact";
-import { useCallback, useState } from "preact/hooks";
+import { useState } from "preact/hooks";
 import { apply, tw } from "@twind";
 import { IS_BROWSER } from "$fresh/runtime.ts";
-
-import Button from "../components/ToggleButton.tsx";
 
 
 const style = apply("stroke-2")
@@ -91,14 +89,6 @@ export default function Player()
   });
 
   return (
-    // <div class={tw('sticky bottom-0 mx-auto px-10 py-8 w-80 bg-gray-800 rounded-t-lg')}>
-    //   <Button 
-    //     onClick={toggle} 
-    //     enabled={play()} 
-    //     disabled={pause()}
-    //     tw={"centerx centery rounded-full stroke-2 font-red-800"}
-    //   />
-    // </div>
     <div></div>
   )
 }
