@@ -33,6 +33,8 @@ export const handler: Handlers<IUser> = {
 
 export default function Playlists({ data }: PageProps<IUser>)
 {
+  const userCover = data.cover[0]?.url ?? "";
+
   return (
     <div class={tw('group-main h-screen w-screen')}>
       <main class={tw('pt(md:24) p-0')}>
@@ -85,8 +87,8 @@ export default function Playlists({ data }: PageProps<IUser>)
             
             <div class={tw(`group-user h-16 w-auto mr(2 md:10) relative right-0 inline-flex`)}>
               <img 
-                class={tw(`w-10 h-10 my-auto rounded-full bg-black sm:hidden md:block`)} 
-                src={data.cover[0].url} 
+                class={tw(`w-10 h-10 my-auto rounded-full bg-black sm:hidden md:block`, userCover ? "" : "opacity-0")} 
+                src={userCover} 
                 alt=" "
               /> 
               <span class={tw(`my-auto mx-4`)}>{data.name}</span>

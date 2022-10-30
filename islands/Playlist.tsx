@@ -15,7 +15,7 @@ export default function Playlist(props: {
 {
   const colorId = randomColor();
   const index = props.index ?? 0;
-  const cover = props.info.cover[0].url ?? "";
+  const cover = props.info.cover[0]?.url ?? "";
   const bg = "bg-" + colorId + "-400";
 
   const info = {...props.info, cover};
@@ -36,7 +36,7 @@ export default function Playlist(props: {
           <Disc size={40} color={colorId}/>
         </div>
         <div class={tw(`absolute rounded-2xl`, bg)}>
-          <img class={tw(`h-44 w-44 rounded-lg text(xs gray-900) scale-[1.02]`)} src={cover} alt="Playlist cover"/>
+          <img class={tw(`h-44 w-44 rounded-lg text(xs gray-900) scale-[1.02]`, cover ? "" : "opacity-0")} src={cover} alt="Playlist cover"/>
         </div>
       </a>
     </div>
