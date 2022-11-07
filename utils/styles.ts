@@ -23,3 +23,11 @@ export const Main = {
     'half-w': `w-[50%]`,
     // 'glass': css`backdrop-filter: blur(10px);`, // guess this isnt working with twind well
 }
+
+export const HomeStyles = {
+    title: `font-italic font-bold text(gray-300 md:4xl sm:xl)`,
+    background: `bg-gray-800`,
+    'button-home': `rounded-full bg-green-700 px-5 py-2 font-bold hover:(scale-[1.05]) active:(scale-[0.9]) transition-all`,
+    'section': `w-screen`,
+    'divider-home': `bg-black w-full h-2`,
+}

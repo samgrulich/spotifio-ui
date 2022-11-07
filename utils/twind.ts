@@ -1,7 +1,8 @@
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { apply, Configuration, setup } from "twind";
 import * as colors from "twind/colors";
-import { Main } from "./styles.ts";
+import Home from "../routes/index.tsx";
+import { Main, HomeStyles } from "./styles.ts";
 export * from "twind";
 
 
@@ -46,6 +47,9 @@ export const config: Configuration = {
       screens: {
         sm: "300px",
         lg: "1300px",
+      },
+      spacing: {
+        0.8: "80%",
       }
     }
   },
@@ -53,6 +57,7 @@ export const config: Configuration = {
   // sheet: voidSheed,
   plugins: {
     ...Main,
+    ...HomeStyles,
   },
 };
 
