@@ -12,15 +12,15 @@ export default function Preview(props: {src: string, shadow?: boolean, z: number
         src={props.src}
         alt="Playlist cover"
         class={tw(`
-          w-40 rounded-2xl 
+          w-[200px] rounded-2xl 
           skew-y-[3deg] relative z-${props.z}
-          top-1/2 left-1/2 
+          top-1/2 left-1/2 border(solid 1 gray-900)
           hover:(translate-x-[-49%] opacity-[0.8]) transition-all
         `, props.tw)}
         style={shadow ? `
           box-shadow: 
             10px -05px 1px black,
-            10px -05px 0px 2px rgba(255, 255, 255, 0.0);
+            10px -05px 0px 2px rgba(255, 255, 255, 0.1);
         ` : ""}
       />
     </div> 
