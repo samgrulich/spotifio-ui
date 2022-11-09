@@ -52,25 +52,35 @@ export default function HomePage()
         <hr class={tw("divider-home")}/>
         <section class={tw("bg-coolGray-900 p-4")}>
           <div>
-            <h3>Automatic Snaps</h3>
+            <h3>Browse your history</h3>
             <p>
-              Spotifio automatically takes a snapshot of
-              of all your <a href="https://spotify.com">Spotify</a> playlists.
+              With our app you can see how is your taste changing. It's just like a photo album.
+            </p>
+          </div>
+          <div>
+            <h3>Keep the old songs alive</h3>
+            <p>
+              We save your old songs, so you can listen to them later.
+            </p>
+          </div>
+          <div>
+            <h3>It's Automatic</h3>
+            <p>
+              In practice you don't have to do much, but simply join
             </p>
           </div>
           <div>
             <h3>Notifications</h3>
             <p>
-              After we get you a handful of snapshots. We notify you that your
-              Music album is ready. By default we send the notifications to email
-              connected with account.
+              After we get you a handful of snapshots. You get notification that it's ready.
+              (btw. default notifications are set to email)
             </p>
           </div>
           <div>
-            <h3>Finally, Browser</h3>
+            <h3>Tell your friend!</h3>
             <p>
-              And when you open the spotifio app you can browse your playlists by 
-              changing the date on your toolbar to whatever day you would like to see.
+              Spotify is the most powerful, when your friends are joined too.
+              That way you can share all your memories together.   
             </p>
           </div>
         </section>
