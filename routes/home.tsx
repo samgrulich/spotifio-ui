@@ -18,7 +18,7 @@ export default function HomePage()
 
   return (
     <div>
-      <header class={tw("p-2 my-2")}>
+      <header class={tw("p-2 mb-4")}>
         <div class={tw("inline-flex")}>
           <div class={tw(style.bubble, "z-10")}></div>
           <span class={tw("title z-20 absolute p-2 top-0 left-0")}>Spotifio</span>
@@ -30,7 +30,7 @@ export default function HomePage()
           <div class={tw("center -translate-1/2 md:w-[60%] w-full")}>
           <div class={tw("flex space-x-12 flex(wrap lg:nowrap)")}>
             <div class={tw("my(20 lg:0)")}>
-            <h1 class={tw("text-2xl md:text-6xl sm:(w-screen text-center absolute) md:(w-auto relative)")}>Watch your playlists evolve</h1>
+            <h1 class={tw("text-2xl md:text-6xl sm:(w-screen text-center top-10 absolute) md:(w-auto top-0 relative)")}>Watch your playlists evolve</h1>
             <p class={tw("hidden md:block w-0.8 text-xl")}>
               We look at the music you listen to and 
               then make you a library, 
@@ -42,7 +42,7 @@ export default function HomePage()
               grid grid-cols-2 gap-2 md:hidden lg:grid
               -ml-6 md:ml-0 
               mb(10 md:0)
-              sm:(w-[200px] relative left-1/2 top-1/3 mt-10 -translate-x-1/2)
+              sm:(w-[200px] relative left-1/2 top-14 -translate-x-1/2)
               md:(w-auto top-1/2)
             `)}>
               <Preview src="playlists/cover_vibe.jpeg" shadow z={10}/>
@@ -52,7 +52,7 @@ export default function HomePage()
             </div>
             </div>
           </div>
-          <button class={tw("button-home text-black centerx-r top-10 text-3xl px-7 py-3")}>Join</button>
+          <button class={tw("button-home text-black centerx-r top-0 text-3xl px-7 py-3")}>Join</button>
           </div>
         </section>
 
@@ -60,7 +60,12 @@ export default function HomePage()
         <section class={tw("")}>
           <Section 
             header="See your own music history"
-            img={{src: "detail_mac_preview.jpg", alt: "playlist history caricature", width: 350}}
+            img={{
+              src: "home/detail_mac_preview.jpg", 
+              alt: "playlist history caricature", 
+              width: 350,
+              "width-sm": 200,
+            }}
           >
             With our app you can see how is your taste changing through the years. It's just like a photo album.
           </Section>
@@ -70,7 +75,8 @@ export default function HomePage()
             img={{
               src: "https://get.pxhere.com/photo/music-technology-antique-retro-old-isolated-nostalgia-radio-knob-keys-speakers-receiver-1953-tube-radio-radio-device-old-radio-electronic-device-communication-device-489059.jpg", 
               alt: "old dusted song",
-              width: 300
+              width: 300,
+              "width-sm": 200
             }}
             textRight
           >
@@ -80,9 +86,10 @@ export default function HomePage()
           <Section 
             header="No stress, it's automatic"
             img={{
-              src: "relax.jpeg", 
+              src: "home/relax.jpeg", 
               alt: "a guy laying on the beach",
-              width: 400
+              width: 400,
+              "width-sm": 200,
             }}
           >
             In practice you don't have to do much, but simply join.
@@ -90,7 +97,11 @@ export default function HomePage()
           <hr class={tw("divider-home-main")}/>
           <Section 
             header="Get notified"
-            img={{src: "https://manuals.fibaro.com/wp-content/uploads/2020/09/normal-push.png", alt: "notification image"}}
+            img={{
+              src: "home/notification.jpg",
+              alt: "notification image",
+              "width-sm": 150,
+            }}
             textRight
           >
             After we get you a handful of snapshots. You get notification that it's ready.
@@ -102,7 +113,8 @@ export default function HomePage()
             img={{
               src: "https://3.bp.blogspot.com/-05LFd2EgiUA/WMLU2JjpP9I/AAAAAAAABFw/TqzNdeGH6fY2pZteKzHZsUufhnRIP6JaQCLcB/s1600/sharinghands2.jpg", 
               alt: "friends sharing music together",
-              width: 500
+              width: 500,
+              "width-sm": 300
             }}
           >
             Spotify is the most powerful, when you can share it. So don't forget to tell your friends.
@@ -110,9 +122,10 @@ export default function HomePage()
           </Section>
         </section>
       </main>
+      <hr class={tw("divider-home-main")}/>
       <footer class={tw('bg-coolGray-900 flex items-center w-screen justify-around p-4')}>
         <div>
-          email: yes <br />
+          email: sometimes <br />
           <a href="">Support</a>
         </div>
         <span class={tw('bottom-0')}>Made with <span>&#10084;</span>, by Sam</span>

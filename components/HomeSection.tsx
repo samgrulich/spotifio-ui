@@ -5,15 +5,16 @@ import { tw } from "@twind";
 
 export default function Section(props: {
   header: string, 
-  img: {src: string, alt: string, width?: number}, 
+  img: {src: string, alt: string, width?: number, "width-sm"?: number}, 
   textRight?: boolean,
   children: string | h.JSX.Element | h.JSX.Element[]
 }) 
 {
   const imgW = props.img.width ?? 200;
+  const imgWSm = props.img["width-sm"] ?? 100;
   const img = (
     <div>
-      <img src={props.img.src} alt={props.img.alt} class={tw(`w-[100px] md:w-[${imgW}px]`)}/>
+      <img src={props.img.src} alt={props.img.alt} class={tw(`w-[${imgWSm}px] lg:w-[${imgW}px]`)}/>
     </div>
   )
 

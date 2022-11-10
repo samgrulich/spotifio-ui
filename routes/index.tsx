@@ -43,6 +43,13 @@ export default function Home() {
   return (
     <div class={tw('')}>
       <main>
+        <VinylBackground 
+          vinylAmount={84} 
+          discSize={[4, 12]} 
+          height={headerBackgroundHeight} 
+          tw={"p-4 relative"} 
+          position={"fixed"}
+        > 
         <div class={tw('inline-flex flex-nowrap flex-col justify-center pt-[30vh] (w-full)')}>
           <div class={tw(`inline-block p-5 mx-auto rounded-xl bg-black`)}>
             <h1 class={tw('sm:text-4xl md:text-8xl p-2 font-bold')}>Go back in time!</h1>
@@ -64,6 +71,7 @@ export default function Home() {
             <MoveTo targetId="intro"> Explore </MoveTo>
           </div>
         </div>
+        </VinylBackground>
         <div class={tw('w-full md:p-20 border(gray-900 solid t-0) pt-20')}>
           <Section dividerColor="green" tw={'relative h-screen block p-5 bg-black'} id="intro" bg="black">
             <h2 class={tw('intro-header')}><b>Hi</b>,</h2>
