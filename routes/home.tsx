@@ -60,14 +60,18 @@ export default function HomePage()
         <section class={tw("")}>
           <Section 
             header="See your own music history"
-            img={{src: "playlists/cover_vibe.jpeg", alt: "playlist history caricature"}}
+            img={{src: "detail_mac_preview.jpg", alt: "playlist history caricature", width: 350}}
           >
             With our app you can see how is your taste changing through the years. It's just like a photo album.
           </Section>
           <hr class={tw("divider-home-main")}/>
           <Section 
-            header="Keep the old songs alive"
-            img={{src: "", alt: "old dusted song"}}
+            header="Keep the old hits alive"
+            img={{
+              src: "https://get.pxhere.com/photo/music-technology-antique-retro-old-isolated-nostalgia-radio-knob-keys-speakers-receiver-1953-tube-radio-radio-device-old-radio-electronic-device-communication-device-489059.jpg", 
+              alt: "old dusted song",
+              width: 300
+            }}
             textRight
           >
             We save your old songs, so you can listen to them later.
@@ -75,14 +79,18 @@ export default function HomePage()
           <hr class={tw("divider-home-main")}/>
           <Section 
             header="No stress, it's automatic"
-            img={{src: "", alt: "a guy laying on the beach"}}
+            img={{
+              src: "relax.jpeg", 
+              alt: "a guy laying on the beach",
+              width: 400
+            }}
           >
             In practice you don't have to do much, but simply join.
           </Section>
           <hr class={tw("divider-home-main")}/>
           <Section 
             header="Get notified"
-            img={{src: "", alt: "notification image"}}
+            img={{src: "https://manuals.fibaro.com/wp-content/uploads/2020/09/normal-push.png", alt: "notification image"}}
             textRight
           >
             After we get you a handful of snapshots. You get notification that it's ready.
@@ -91,7 +99,11 @@ export default function HomePage()
           <hr class={tw("divider-home-main")}/>
           <Section 
             header="Tell a friend!"
-            img={{src: "", alt: "friends sharing music together"}}
+            img={{
+              src: "https://3.bp.blogspot.com/-05LFd2EgiUA/WMLU2JjpP9I/AAAAAAAABFw/TqzNdeGH6fY2pZteKzHZsUufhnRIP6JaQCLcB/s1600/sharinghands2.jpg", 
+              alt: "friends sharing music together",
+              width: 500
+            }}
           >
             Spotify is the most powerful, when you can share it. So don't forget to tell your friends.
             That way you can share all your memories together.   
