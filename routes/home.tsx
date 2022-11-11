@@ -23,7 +23,7 @@ export default function HomePage()
           <div class={tw(style.bubble, "z-10")}></div>
           <span class={tw("title z-20 absolute p-2 top-0 left-0")}>Spotifio</span>
         </div>
-        <button class={tw("button-home text-black float-right")}>Join</button>
+        <button class={tw("button-home text-black float-right hidden md:block")}>Join</button>
       </header>
       <main>
         <section class={tw("section h-[100vh] relative bg-gradient-to-b from-black to-coolGray-900")}>
@@ -73,7 +73,7 @@ export default function HomePage()
           <Section 
             header="Keep the old hits alive"
             img={{
-              src: "https://get.pxhere.com/photo/music-technology-antique-retro-old-isolated-nostalgia-radio-knob-keys-speakers-receiver-1953-tube-radio-radio-device-old-radio-electronic-device-communication-device-489059.jpg", 
+              src: "home/old_radio.jpg", 
               alt: "old dusted song",
               width: 300,
               "width-sm": 200
@@ -111,7 +111,7 @@ export default function HomePage()
           <Section 
             header="Tell a friend!"
             img={{
-              src: "https://3.bp.blogspot.com/-05LFd2EgiUA/WMLU2JjpP9I/AAAAAAAABFw/TqzNdeGH6fY2pZteKzHZsUufhnRIP6JaQCLcB/s1600/sharinghands2.jpg", 
+              src: "home/share.jpg", 
               alt: "friends sharing music together",
               width: 500,
               "width-sm": 300
@@ -122,6 +122,7 @@ export default function HomePage()
           </Section>
         </section>
       </main>
+      <button class={tw("button-home text-black centerx-r text-2xl px-7 py-3 mb-8")}>Join</button>
       <hr class={tw("divider-home-main")}/>
       <footer class={tw('bg-coolGray-900 flex items-center w-screen justify-around p-4')}>
         <div>

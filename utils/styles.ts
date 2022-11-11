@@ -27,7 +27,7 @@ export const Main = {
 export const HomeStyles = {
     title: `font-italic font-bold text(gray-300 md:4xl sm:xl)`,
     background: `bg-gray-800`,
-    'button-home': `rounded-full bg-green-700 px-5 py-2 font-bold hover:(scale-[1.05]) active:(scale-[0.98]) transition-all`,
+    'button-home': `rounded-full bg-green-600 px-5 py-2 font-bold hover:(scale-[1.05]) active:(scale-[0.98]) transition-all`,
 
     'section': `w-screen`,
     'section-home-intro': `
