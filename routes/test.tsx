@@ -3,13 +3,17 @@ import { h } from "preact";
 import { tw, apply } from "@twind";
 
 import { RouteConfig } from "$fresh/server.ts";
+import { IS_BROWSER } from "$fresh/runtime.ts";
 
 import Disc from "../components/VinylDisc.tsx";
 import VinylBackground from "../components/VinylBackground.tsx";
 
 
+const IS_SERVER = !IS_BROWSER;
+const isDebug = IS_SERVER ? Deno.env.get("IS_DEBUG") == "true" : false;
+
 export const config: RouteConfig = {
-  routeOverride: ""
+  routeOverride: isDebug ? "/test" : "102030405060708090"
 };
 
 export default function testPage()
