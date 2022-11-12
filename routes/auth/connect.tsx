@@ -1,9 +1,3 @@
-/** @jsx h */
-
-// initialize server-api-spotify connection 
-// then redirect to spotify auth
-
-import { h } from "preact";
 import { Handlers, HandlerContext } from "$fresh/server.ts";
 
 import { getApi } from "../../modules/api/functions.ts";

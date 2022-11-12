@@ -1,7 +1,5 @@
-/** @jsx h */
-import { h } from "preact";
 import { useState } from "preact/hooks";
-import { apply, tw } from "@twind";
+import { apply, tw } from "twind";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 
 

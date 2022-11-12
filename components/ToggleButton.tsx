@@ -1,7 +1,6 @@
-/** @jsx h */
-import { h, JSX } from "preact";
+import { JSX } from "preact";
 import { StateUpdater, useCallback, useState } from "preact/hooks";
-import { tw } from "@twind";
+import { tw } from "twind";
 
 export default function Button(props: {
   onClick: () => void, 

@@ -1,9 +1,4 @@
-/** @jsx h */
-
-// display all users playlists
-
-import { h } from "preact";
-import { tw, apply } from "@twind";
+import { tw, apply } from "twind";
 import { HandlerContext, Handlers, PageProps } from "$fresh/server.ts";
 
 import PlaylistsRenderer from "../../islands/PlaylistsRender.tsx";
@@ -43,74 +38,73 @@ export default function Playlists({ data }: PageProps<IUser>)
   const userCoverOpacity = userCover ? "" : "opacity-0";
 
   return (
-    <div class={tw('group-main h-screen w-screen')}>
-      <main class={tw('pt(md:24) p-0')}>
-        <div class={tw('min-h-screen')}>
-          <div id="renderTarget" class={tw(`
+    <div class='group-main h-screen w-screen'>
+      <main class='pt(md:24) p-0'>
+        <div class='min-h-screen'>
+          <div id="renderTarget" class={`
             grid grid-cols(2 md:3 lg:4) 
             mx(0 md:auto) 
             w(sm:[100%] md:[80%] lg:[1000px]) 
             gap(x(sm:1 md:16 lg:24) y(sm:0 md:16))
-          `)}></div>
+          `}></div>
         </div>
 
         <div 
-          style={"backdrop-filter: blur(12px);"} 
-          class={tw(`
+          style="backdrop-filter: blur(12px);"
+          class={`
             sticky interactive 
             p-5 h-24 w-screen 
             shadow-lg 
             bottom-0 left-0 float-bottom 
             lg:(translate-x-[25%] w-2/3 rounded-t-lg)
-          `)}
+          `}
         >
-          <div class={tw(`centerx sm:-top-14 md:-top-16 md:scale-[1.4]`)}>
+          <div class="centerx sm:-top-14 md:-top-16 md:scale-[1.4]">
             <a href="/app">
               <Player style="border(solid coolGray-900 1) shadow(md)"/>
             </a>
           </div>
 
-          <div class={tw(`
+          <div class={`
             absolute sm:(top-[60%]) left-1/2 
             md:(block top-1/2 left-24 -translate-y-1/2)
-          `)}>
+          `}>
             <a href="/">
-              <h1 class={tw(`
-                absoluted -translate-x-1/2 -translate-y([150%] md:1/2)
+              <h1 class={`
+                absoluted -translate-x-1/2 -translate-y-([150%] md:1/2)
                 font-italic text(gray-900 md:4xl sm:xl)
-              `)}>Spotifio</h1>
+              `}>Spotifio</h1>
             </a>
           </div>
 
-          <div class={tw(`
+          <div class={`
             absolute top-1/2 
             sm:(right-full translate-x-full) pl(1 md:0) 
             scale([80%] md:100) md:(right-[14%] -translate-x-2/3) -translate-y-1/2
-          `)}>
+          `}>
             <PlaylistsRenderer />
           </div>
           
-          <div class={tw(`absolute right-0 tranlate-x-1/2`)}>
+          <div class="absolute right-0 tranlate-x-1/2">
             
-            <div class={tw(`group-user h-16 w-auto mr(2 md:10) relative right-0 inline-flex`)}>
+            <div class="group-user h-16 w-auto mr(2 md:10) relative right-0 inline-flex">
               <img 
-                class={tw(`w-10 h-10 my-auto rounded-full bg-black sm:hidden md:block`, userCoverOpacity)} 
+                class={tw("w-10 h-10 my-auto rounded-full bg-black sm:hidden md:block", userCoverOpacity)} 
                 src={userCover} 
                 alt=" "
               /> 
-              <span class={tw(`my-auto mx-4`)}>{data.name}</span>
-              <div class={tw(`
+              <span class="my-auto mx-4">{data.name}</span>
+              <div class={`
                 absolute p-3 top-0 
                 interactive bg-black 
                 rounded-t-lg opacity-0 
                 -translate-y-2/3 
                 group-user-hover:(opacity-100 -translate-y-full transition-all duration-200 ease-in-out)
-              `)}>
+              `}>
                 <a href="/">Home</a> <br />
                 <a href="/auth/logout">Log out</a> <br />
               </div> 
             </div>
-            
           </div>
         </div>
       </main>

@@ -1,5 +1,4 @@
-/** @jsx h */
-import { h, render } from "preact";
+import { render } from "preact";
 import { useCallback } from "preact/hooks";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 

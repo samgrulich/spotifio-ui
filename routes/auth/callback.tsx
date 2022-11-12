@@ -1,9 +1,3 @@
-/** @jsx h */
-
-// connect the user with the api-spotify_callback and the back
-// then store user credentials
-
-import { h } from "preact";
 import { Handlers, HandlerContext } from "$fresh/server.ts";
 
 import { getApi } from "../../modules/api/functions.ts";

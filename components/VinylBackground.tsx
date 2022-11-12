@@ -1,6 +1,5 @@
-/** @jsx h */
-import preact, { h } from "preact";
-import { tw } from "@twind";
+import preact from "preact";
+import { tw } from "twind";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import Disc from "./VinylDisc.tsx";
 import { randomColor } from "../modules/ui/functions.ts";

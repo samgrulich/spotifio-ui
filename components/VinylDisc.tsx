@@ -1,6 +1,4 @@
-/** @jsx h */
-import { h } from "preact";
-import { tw, apply } from "@twind";
+import { tw, apply } from "twind";
 
 
 function parsePadding(padding?: [x?: number, y?: number]): {x: number, y: number}

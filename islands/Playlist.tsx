@@ -1,6 +1,4 @@
-/** @jsx h */
-import { h } from "preact";
-import { tw } from "@twind";
+import { tw } from "twind";
 
 import Disc from "../components/VinylDisc.tsx";
 import { randomColor } from "../modules/ui/functions.ts";

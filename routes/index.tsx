@@ -1,7 +1,3 @@
-/** @jsx h */
-import { h } from "preact";
-import { apply, tw } from "@twind";
-
 import Section from "../components/HomeSection.tsx";
 import Preview from "../components/PlaylistPreview.tsx";
 
@@ -9,40 +5,40 @@ import Preview from "../components/PlaylistPreview.tsx";
 export default function HomePage()
 {
   const style = {
-    bubble: apply(`
+    bubble: `
       absoluted 
       -translate-y-[70%] -translate-x-1/4 -z-10 
       background rounded-full
       w(36 sm:40 md:64) h(36 sm:40 md:64)
-    `),
+    `,
   };
   const connectURL = "/auth/connect";
 
   return (
     <div>
-      <header class={tw("p-2 mb-4")}>
-        <div class={tw("inline-flex")}>
-          <div class={tw(style.bubble, "z-10")}></div>
-          <span class={tw("title z-20 absolute p-2 top-0 left-0")}>Spotifio</span>
+      <header class="p-2 mb-4">
+        <div class="inline-flex">
+          <div class={`${style.bubble} z-10`}></div>
+          <span class="title z-20 absolute p-2 top-0 left-0">Spotifio</span>
         </div>
         <a href={connectURL}>
-          <button class={tw("button-home text-black float-right hidden md:block")}>Join</button>
+          <button class="button-home text-black float-right hidden md:block">Join</button>
         </a>
       </header>
       <main>
-        <section class={tw("section h-[100vh] relative bg-gradient-to-b from-black to-coolGray-900")}>
-          <div class={tw("center -translate-1/2 md:w-[60%] w-full")}>
-          <div class={tw("flex space-x-12 flex(wrap lg:nowrap)")}>
-            <div class={tw("my(20 lg:0)")}>
-            <h1 class={tw("text-2xl md:text-6xl sm:(w-screen text-center top-10 absolute) md:(w-auto top-0 relative)")}>Watch your playlists evolve</h1>
-            <p class={tw("hidden md:block w-0.8 text-xl")}>
+        <section class="section h-[100vh] relative bg-gradient-to-b from-black to-coolGray-900">
+          <div class="center -translate-1/2 md:w-[60%] w-full">
+          <div class="flex space-x-12 flex(wrap lg:nowrap)">
+            <div class="my(20 lg:0)">
+            <h1 class="text-2xl md:text-6xl sm:(w-screen text-center top-10 absolute) md:(w-auto top-0 relative)">Watch your playlists evolve</h1>
+            <p class="hidden md:block w-0.8 text-xl">
               We look at the music you listen to and 
               then make you a library, 
               so you can see what you were listening to before.
             </p>
             </div>
-            <div class={tw("inline w-full lg:w-1/2")}>
-            <div class={tw(`
+            <div class="inline w-full lg:w-1/2">
+            <div class={(`
               grid grid-cols-2 gap-2 md:hidden lg:grid
               -ml-6 md:ml-0 
               mb(10 md:0)
@@ -57,13 +53,13 @@ export default function HomePage()
             </div>
           </div>
           <a href={connectURL}>
-            <button class={tw("button-home text-black centerx-r top-0 text-3xl px-7 py-3")}>Join</button>
+            <button class="button-home text-black centerx-r top-0 text-3xl px-7 py-3">Join</button>
           </a>
           </div>
         </section>
 
-        <hr class={tw("divider-home-main")}/>
-        <section class={tw("")}>
+        <hr class="divider-home-main"/>
+        <section class="">
           <Section 
             header="See your own music history"
             img={{
@@ -75,7 +71,7 @@ export default function HomePage()
           >
             With our app you can see how is your taste changing through the years. It's just like a photo album.
           </Section>
-          <hr class={tw("divider-home-main")}/>
+          <hr class="divider-home-main"/>
           <Section 
             header="Keep the old hits alive"
             img={{
@@ -88,7 +84,7 @@ export default function HomePage()
           >
             We save your old songs, so you can listen to them later.
           </Section>
-          <hr class={tw("divider-home-main")}/>
+          <hr class="divider-home-main"/>
           <Section 
             header="No stress, it's automatic"
             img={{
@@ -100,7 +96,7 @@ export default function HomePage()
           >
             In practice you don't have to do much, but simply join.
           </Section>
-          <hr class={tw("divider-home-main")}/>
+          <hr class="divider-home-main"/>
           <Section 
             header="Get notified"
             img={{
@@ -113,7 +109,7 @@ export default function HomePage()
             After we get you a handful of snapshots. You get notification that it's ready.
             (btw. default notifications are set to email)
           </Section>
-          <hr class={tw("divider-home-main")}/>
+          <hr class="divider-home-main"/>
           <Section 
             header="Tell a friend!"
             img={{
@@ -129,15 +125,15 @@ export default function HomePage()
         </section>
       </main>
       <a href={connectURL}>
-        <button class={tw("button-home text-black centerx-r text-2xl px-7 py-3 mb-8")}>Join</button>
+        <button class="button-home text-black centerx-r text-2xl px-7 py-3 mb-8">Join</button>
       </a>
-      <hr class={tw("divider-home-main")}/>
-      <footer class={tw('bg-coolGray-900 flex items-center w-screen h-24 justify-around p-4')}>
+      <hr class="divider-home-main"/>
+      <footer class='bg-coolGray-900 flex items-center w-screen h-24 justify-around p-4'>
         <div>
           email: support@spotifio.com <br />
           {/* <a href="">Support</a> */}
         </div>
-        <span class={tw('bottom-0')}>Made with <span>&#10084;</span>, by Sam</span>
+        <span class='bottom-0'>Made with <span>&#10084;</span>, by Sam</span>
       </footer>
     </div>
  )

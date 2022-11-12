@@ -1,6 +1,4 @@
-/** @jsx h */
-import { h } from "preact";
-import { tw, apply } from "@twind";
+import { tw, apply } from "twind";
 
 import { RouteConfig } from "$fresh/server.ts";
 import { IS_BROWSER } from "$fresh/runtime.ts";
@@ -20,7 +18,8 @@ export default function testPage()
 {
   return (
     <div class={tw("")}>
-      <div class={tw("bg-black")}>
+      <div class="bg-blue-500 olaf-400">TEST div</div>
+      <div class="bg-black">
       <Disc size={64} style={"bg-coolGray-800"}/>
       </div>
       <div class={tw('relative p-20 w-screen bg-white')}>

@@ -1,6 +1,5 @@
 // deno-lint-ignore-file no-explicit-any
-/** @jsx h */
-import { h, render } from "preact";
+import { render } from "preact";
 import { useState, StateUpdater, useEffect } from "preact/hooks";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 
