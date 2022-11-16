@@ -29,7 +29,13 @@ async function requestDate(date: string): Promise<DataContent>
     default:
       return {status: "err"};
   }
+}
 
+function renderPlaylist(snap: ISnapshot)
+{
+  return (
+    <Playlist index={0} id={snap.hash} info={snap}/>
+  )
 }
 
 function renderPlaylists(playlists: Array<ISnapshot>)
@@ -59,12 +65,6 @@ function renderError()
   return renderSnapMessage(messages);
 }
 
-function renderPlaylist(snap: ISnapshot)
-{
-  return (
-    <Playlist index={0} id={snap.hash} info={snap}/>
-  )
-}
 
 function renderContent(content: DataContent)
 {
@@ -81,12 +81,24 @@ function renderContent(content: DataContent)
   }
 }
 
+function dateToLocale(dateISO?: string)
+{
+  if (!dateISO) return undefined;
+
+  const date = new Date(dateISO);
+  return date.toLocaleDateString();
+}
+
 export default function Renderer()
 {
-  const changeCallback = useCallback(async (renderTarget: HTMLElement, date: string) => {
+  const changeCallback = useCallback(async (renderTarget: HTMLElement, dateTarget: HTMLElement | null, date: string) => {
     const content = await requestDate(date);
     const playlistElements = renderContent(content);
 
+    const contentDate = content.data?.at(0)?.creationDate;
+    if (dateTarget) dateTarget.innerHTML = dateToLocale(contentDate) ?? "invalid snapshots";
+
+    // replace playlists (elmenets)
     renderTarget.innerHTML = "";
     render(playlistElements, renderTarget);
   }, []);
@@ -94,6 +106,7 @@ export default function Renderer()
   if (IS_BROWSER)
   {
     const renderTarget = document.getElementById("renderTarget");
+    const dateTarget = document.getElementById("dateTarget");
 
     if(!renderTarget)
       return (
@@ -103,10 +116,10 @@ export default function Renderer()
         </div>
       )
 
-    changeCallback(renderTarget, getToday());
+    changeCallback(renderTarget, dateTarget, getToday());
     return (
       <div>
-        <DateSelection callback={(date: string) => {changeCallback(renderTarget, date)}}/>
+        <DateSelection callback={(date: string) => {changeCallback(renderTarget, dateTarget, date)}}/>
       </div>
     );
   }

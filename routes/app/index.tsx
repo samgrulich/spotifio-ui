@@ -39,8 +39,9 @@ export default function Playlists({ data }: PageProps<IUser>)
 
   return (
     <div class='group-main h-screen w-screen'>
-      <main class='pt(md:24) p-0'>
+      <main class='pt(16 md:24) p-0'>
         <div class='min-h-screen'>
+          <span id="dateTarget" class="centerx top-8 font-bold">{new Date().toLocaleDateString()}</span>
           <div id="renderTarget" class={`
             grid grid-cols(2 md:3 lg:4) 
             mx(0 md:auto) 
@@ -72,7 +73,7 @@ export default function Playlists({ data }: PageProps<IUser>)
             <a href="/">
               <h1 class={`
                 absoluted -translate-x-1/2 -translate-y-([150%] md:1/2)
-                font-italic text(gray-900 md:4xl sm:xl)
+                title
               `}>Spotifio</h1>
             </a>
           </div>
