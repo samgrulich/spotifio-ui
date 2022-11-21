@@ -1,8 +1,27 @@
 import Section from "../components/HomeSection.tsx";
 import Preview from "../components/PlaylistPreview.tsx";
 import Text, { Languages } from "../components/MultilingualText.tsx";
+import { HandlerContext, PageProps } from "$fresh/server.ts";
 
-export default function HomePage()
+
+interface PageConfig 
+{
+  lang: Languages;
+}
+
+export async function handler(req: Request, ctxt: HandlerContext)
+{
+  const searchParams = new URL(req.url).searchParams;
+
+  const langShort = searchParams.get("hl") ?? "en";
+  const isLangValid = Object.keys(Languages).includes(langShort);
+
+  const lang = isLangValid ? langShort as Languages : Languages.en; 
+  const resp = await ctxt.render({lang: lang});
+  return resp;
+}
+
+export default function HomePage({ data }: PageProps<PageConfig>)
 {
   const style = {
     bubble: `
@@ -14,7 +33,7 @@ export default function HomePage()
   };
   const connectURL = "/auth/connect";
   const config = {
-    lang: Languages.cs,
+    lang: data.lang,
     options: locale,
   }
 
@@ -189,6 +208,6 @@ const locale = {
       Spotifio si nejvíce užiješ, když se můžeš podělit s přáteli. Tak jim o nás nezapomeň říct.
       Takže pak spolu můžete sdílet svoje vzpomínky navzájem.
     </>,
-    "bottom": <>Made with <span>&#10084;</span>, by Sam</>
+    "bottom": <>Vytvářeno s <span>&#10084;</span>, od Sama</>
   }
 }
