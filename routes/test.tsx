@@ -5,6 +5,7 @@ import { IS_BROWSER } from "$fresh/runtime.ts";
 
 import Disc from "../components/VinylDisc.tsx";
 import VinylBackground from "../components/VinylBackground.tsx";
+import Text, {Languages} from "../components/MultilingualText.tsx";
 
 
 const IS_SERVER = !IS_BROWSER;
@@ -13,6 +14,15 @@ const isDebug = IS_SERVER ? Deno.env.get("IS_DEBUG") == "true" : false;
 export const config: RouteConfig = {
   routeOverride: isDebug ? "/test" : "102030405060708090"
 };
+
+const messages = {
+  "en": {
+    "welcome": "Welcome to the test website",
+  },
+  "cz": {
+    "welcome": "Vitej na testovaci strance",
+  }
+}
 
 export default function testPage()
 {
@@ -27,6 +37,13 @@ export default function testPage()
         {/* <Disc size={15} color={"red"}/> */}
       </div>
 
+      <div class="w-1/2 m-10">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Culpa deserunt autem cupiditate cum, minima laboriosam illo harum delectus, 
+        vel eligendi ut illum nihil, officia iste maiores vero nam facere. Nihil?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, 
+        voluptatem nam repudiandae provident nostrum dolor vitae fuga temporibus itaque animi.
+      </div>
       <div>main</div>
       <div>main</div>
       <div>main</div>

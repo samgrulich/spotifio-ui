@@ -1,11 +1,12 @@
 import { tw } from "twind";
+import { JSX } from "preact";
 
 
 export default function Section(props: {
-  header: string, 
+  header: string | JSX.Element, 
   img: {src: string, alt: string, width?: number, "width-sm"?: number}, 
   textRight?: boolean,
-  children: string | h.JSX.Element | h.JSX.Element[]
+  children: string | JSX.Element | JSX.Element[]
 }) 
 {
   const imgW = props.img.width ?? 200;
