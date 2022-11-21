@@ -14,7 +14,7 @@ export default function HomePage()
   };
   const connectURL = "/auth/connect";
   const config = {
-    lang: Languages.en,
+    lang: Languages.cs,
     options: locale,
   }
 
@@ -26,7 +26,7 @@ export default function HomePage()
           <span class="title z-20 absolute p-2 top-0 left-0">Spotifio</span>
         </div>
         <a href={connectURL}>
-          <button class="button-home text-black float-right hidden md:block">Join</button>
+          <button class="button-home text-black float-right hidden md:block"><Text id="join" config={config} /></button>
         </a>
       </header>
       <main>
@@ -161,12 +161,34 @@ const locale = {
     </>,
     "sec-share-h": "Tell a friend!",
     "sec-share-p": <>
-      Spotify is the most powerful, when you can share it. So don't forget to tell your friends.
+      Spotifio is the most powerful, when you can share it. So don't forget to tell your friends.
       That way you can share all your memories together.   
     </>,
     "bottom": <>Made with <span>&#10084;</span>, by Sam</>
   },
   "cs": {
-    "bottom": <>Vytvořeno s <span>&#10084;</span>, Sam</>,
+    "intro-h": <>Koukej jak se tvoje playlisty mění</>,
+    "intro-p": <>
+      Sledujeme, co posloucháš a zaznamenáváme to na později jen pro tebe.
+      Takže si pak můžeš připomenout co jsi poslouchal dřív. {/** e? */}
+    </>,
+    "join": "Přihlásit",
+    "sec-history-h": "Mrkni na historii tvojí hubdy",
+    "sec-history-p": <>S naší appkou můžeš sledovat jak se mění tvůj vkus během let. Jako foto-album.</>,
+    "sec-hits-h": "Nezapomeň na svoje hity",
+    "sec-hits-p": <>Také ukládáme tvoje staré písničky, takže ti je jednou za čas připomeneme.</>,
+    "sec-auto-h": "No stress, běží to samo",
+    "sec-auto-p": <>Tím pádem toho moc dělat nemusíš. Prostě se připoj.</>,
+    "sec-notifications-h": "Dostávej upozornění",
+    "sec-notifications-p": <>
+      Potom co ti seženeme pár momentek. Ti napíšeme, že jsme připraveni.
+      (btw. základně tě upozorníme emailem)
+    </>,
+    "sec-share-h": "Řekni ostatním!",
+    "sec-share-p": <>
+      Spotifio si nejvíce užiješ, když se můžeš podělit s přáteli. Tak jim o nás nezapomeň říct.
+      Takže pak spolu můžete sdílet svoje vzpomínky navzájem.
+    </>,
+    "bottom": <>Made with <span>&#10084;</span>, by Sam</>
   }
 }

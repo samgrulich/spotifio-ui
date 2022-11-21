@@ -37,7 +37,6 @@ export default function testPage()
         {/* <Disc size={15} color={"red"}/> */}
       </div>
 
-      <Text lang={Languages.en} options={{"en": "Welcome to the test website"}}/>
       <div class="w-1/2 m-10">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
         Culpa deserunt autem cupiditate cum, minima laboriosam illo harum delectus, 
