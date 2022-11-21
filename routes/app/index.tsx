@@ -41,6 +41,7 @@ export default function Playlists({ data }: PageProps<IUser>)
     <div class='group-main h-screen w-screen'>
       <main class='pt(md:24) p-0'>
         <div class='min-h-screen'>
+          <div id="snapshotDate">1/1/2022</div>
           <div id="renderTarget" class={`
             grid grid-cols(2 md:3 lg:4) 
             mx(0 md:auto) 

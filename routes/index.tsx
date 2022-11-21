@@ -1,6 +1,6 @@
 import Section from "../components/HomeSection.tsx";
 import Preview from "../components/PlaylistPreview.tsx";
-
+import Text, { Languages } from "../components/MultilingualText.tsx";
 
 export default function HomePage()
 {
@@ -13,6 +13,10 @@ export default function HomePage()
     `,
   };
   const connectURL = "/auth/connect";
+  const config = {
+    lang: Languages.en,
+    options: locale,
+  }
 
   return (
     <div>
@@ -30,11 +34,9 @@ export default function HomePage()
           <div class="center -translate-1/2 md:w-[60%] w-full">
           <div class="flex space-x-12 flex(wrap lg:nowrap)">
             <div class="my(20 lg:0)">
-            <h1 class="text-2xl md:text-6xl sm:(w-screen text-center top-10 absolute) md:(w-auto top-0 relative)">Watch your playlists evolve</h1>
+            <h1 class="text-2xl md:text-6xl sm:(w-screen text-center top-10 absolute) md:(w-auto top-0 relative)"><Text id="intro-h" config={config}/></h1>
             <p class="hidden md:block w-0.8 text-xl">
-              We look at the music you listen to and 
-              then make you a library, 
-              so you can see what you were listening to before.
+              <Text id="intro-p" config={config}/>
             </p>
             </div>
             <div class="inline w-full lg:w-1/2">
@@ -53,7 +55,7 @@ export default function HomePage()
             </div>
           </div>
           <a href={connectURL}>
-            <button class="button-home text-black centerx-r top-0 text-3xl px-7 py-3">Join</button>
+            <button class="button-home text-black centerx-r top-0 text-3xl px-7 py-3"><Text id="join" config={config} /></button>
           </a>
           </div>
         </section>
@@ -61,7 +63,7 @@ export default function HomePage()
         <hr class="divider-home-main"/>
         <section class="">
           <Section 
-            header="See your own music history"
+            header={<Text id="sec-history-h" config={config} />}
             img={{
               src: "home/detail_mac_preview.jpg", 
               alt: "playlist history caricature", 
@@ -69,11 +71,11 @@ export default function HomePage()
               "width-sm": 200,
             }}
           >
-            With our app you can see how is your taste changing through the years. It's just like a photo album.
+            <Text id="sec-history-p" config={config} />
           </Section>
           <hr class="divider-home-main"/>
           <Section 
-            header="Keep the old hits alive"
+            header={<Text id="sec-hits-h" config={config} />}
             img={{
               src: "home/old_radio.jpg", 
               alt: "old dusted song",
@@ -82,11 +84,11 @@ export default function HomePage()
             }}
             textRight
           >
-            We save your old songs, so you can listen to them later.
+            <Text id="sec-hits-p" config={config} />
           </Section>
           <hr class="divider-home-main"/>
           <Section 
-            header="No stress, it's automatic"
+            header={<Text id="sec-auto-h" config={config} />}
             img={{
               src: "home/relax.jpeg", 
               alt: "a guy laying on the beach",
@@ -94,11 +96,11 @@ export default function HomePage()
               "width-sm": 200,
             }}
           >
-            In practice you don't have to do much, but simply join.
+            <Text id="sec-auto-p" config={config} />
           </Section>
           <hr class="divider-home-main"/>
           <Section 
-            header="Get notified"
+            header={<Text id="sec-notifications-h" config={config} />}
             img={{
               src: "home/notification.jpg",
               alt: "notification image",
@@ -106,12 +108,11 @@ export default function HomePage()
             }}
             textRight
           >
-            After we get you a handful of snapshots. You get notification that it's ready.
-            (btw. default notifications are set to email)
+            <Text id="sec-notifications-p" config={config} />
           </Section>
           <hr class="divider-home-main"/>
           <Section 
-            header="Tell a friend!"
+            header={<Text id="sec-share-h" config={config} />}
             img={{
               src: "home/share.jpg", 
               alt: "friends sharing music together",
@@ -119,8 +120,7 @@ export default function HomePage()
               "width-sm": 300
             }}
           >
-            Spotify is the most powerful, when you can share it. So don't forget to tell your friends.
-            That way you can share all your memories together.   
+            <Text id="sec-share-p" config={config} />
           </Section>
         </section>
       </main>
@@ -133,8 +133,40 @@ export default function HomePage()
           email: support@spotifio.com <br />
           {/* <a href="">Support</a> */}
         </div>
-        <span class='bottom-0'>Made with <span>&#10084;</span>, by Sam</span>
+        <span class='bottom-0'><Text id="bottom" config={config}/></span>
       </footer>
     </div>
  )
+}
+
+const locale = {
+  "en": {
+    "intro-h": <>Watch your playlists evolve</>,
+    "intro-p": <>
+      We look at the music you listen to and 
+      then make you a library, 
+      so you can see what you were listening to before.
+    </>,
+    "join": "Join",
+    "sec-history-h": "See your own music history",
+    "sec-history-p": <>With our app you can see how is your taste changing through the years. It's just like a photo album.</>,
+    "sec-hits-h": "Keep the old hits alive",
+    "sec-hits-p": <>We save your old songs, so you can listen to them later.</>,
+    "sec-auto-h": "No stress, it's automatic",
+    "sec-auto-p": <>In practice you don't have to do much, but simply join.</>,
+    "sec-notifications-h": "Get notified",
+    "sec-notifications-p": <>
+      After we get you a handful of snapshots. You get notification that it's ready.
+      (btw. default notifications are set to email)
+    </>,
+    "sec-share-h": "Tell a friend!",
+    "sec-share-p": <>
+      Spotify is the most powerful, when you can share it. So don't forget to tell your friends.
+      That way you can share all your memories together.   
+    </>,
+    "bottom": <>Made with <span>&#10084;</span>, by Sam</>
+  },
+  "cs": {
+    "bottom": <>Vytvořeno s <span>&#10084;</span>, Sam</>,
+  }
 }
