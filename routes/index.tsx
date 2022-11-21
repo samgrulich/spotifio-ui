@@ -53,7 +53,7 @@ export default function HomePage({ data }: PageProps<PageConfig>)
           <div class="center -translate-1/2 md:w-[60%] w-full">
           <div class="flex space-x-12 flex(wrap lg:nowrap)">
             <div class="my(20 lg:0)">
-            <h1 class="text-2xl md:text-6xl sm:(w-screen text-center top-10 absolute) md:(w-auto top-0 relative)"><Text id="intro-h" config={config}/></h1>
+            <h1 class="text-2xl md:text-6xl sm:(w-[80vw] centerx text-center top-10) md:(w-auto top-0 left-0 relative)"><Text id="intro-h" config={config}/></h1>
             <p class="hidden md:block w-0.8 text-xl">
               <Text id="intro-p" config={config}/>
             </p>
@@ -196,8 +196,8 @@ const locale = {
     "sec-history-p": <>S naší appkou můžeš sledovat jak se mění tvůj vkus během let. Jako foto-album.</>,
     "sec-hits-h": "Nezapomeň na svoje hity",
     "sec-hits-p": <>Také ukládáme tvoje staré písničky, takže ti je jednou za čas připomeneme.</>,
-    "sec-auto-h": "No stress, běží to samo",
-    "sec-auto-p": <>Tím pádem toho moc dělat nemusíš. Prostě se připoj.</>,
+    "sec-auto-h": "Žádný stres, o vše je postaráno",
+    "sec-auto-p": <>Tím pádem toho moc dělat nemusíš. Jenom se připoj.</>,
     "sec-notifications-h": "Dostávej upozornění",
     "sec-notifications-p": <>
       Potom co ti seženeme pár momentek. Ti napíšeme, že jsme připraveni.
