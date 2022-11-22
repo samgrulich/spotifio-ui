@@ -42,7 +42,7 @@ export default function HomePage({ data }: PageProps<PageConfig>)
       <header class="p-2 mb-4">
         <div class="inline-flex">
           <div class={`${style.bubble} z-10`}></div>
-          <span class="title z-20 absolute p-2 top-0 left-0">Spotifio</span>
+          <span class="title z-20 absolute p-2 top-0 left-0">Brand</span>
         </div>
         <a href={connectURL}>
           <button class="button-home text-black float-right hidden md:block"><Text id="join" config={config} /></button>
@@ -147,13 +147,20 @@ export default function HomePage({ data }: PageProps<PageConfig>)
         <button class="button-home text-black centerx-r text-2xl px-7 py-3 mb-8">Join</button>
       </a>
       <hr class="divider-home-main"/>
-      <footer class='bg-coolGray-900 flex items-center w-screen h-24 justify-around p-4'>
-        <div>
-          email: support@spotifio.com <br />
-          {/* <a href="">Support</a> */}
+      <footer class='bg-coolGray-900 w-screen h-24 p-4 pt-6'>
+        <div class="flex items-center justify-around w-full">
+          <a href="https://spotify.com">
+            <img src="spotify/logos/01_RGB/02_PNG/Spotify_Logo_RGB_Green.png" alt="Spotify logo" class="w-20"/>
+          </a>
         </div>
-        <span class='bottom-0'><Text id="bottom" config={config}/></span>
-      </footer>
+        <div class="flex items-center justify-around w-full mb-2">
+          <div>
+            email: support@brand.com <br />
+            {/* <a href="">Support</a> */}
+          </div>
+          <span class='bottom-0'><Text id="bottom" config={config}/></span>
+        </div>
+     </footer>
     </div>
  )
 }

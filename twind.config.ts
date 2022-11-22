@@ -15,7 +15,7 @@ export default {
   preflight: {
     h1: apply('font-bold inline'),
     h2: apply('text-2xl'),
-    body: apply('text-white bg-black overflow-x-hidden'),
+    body: apply('text-white bg-black overflow-x-hidden font-sans'),
     a: apply('text-green-500 underline'),
     th: apply('text-left p-2'),
     td: apply('text-left p-2'),
