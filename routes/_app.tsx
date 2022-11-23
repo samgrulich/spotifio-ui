@@ -6,7 +6,7 @@ export default function App(props: AppProps) {
     <>
       <Head>
         <meta name="description" content="It's a web app, helping you with a spotify playlist version controll"/>
-        <title>Spotifio - app</title>
+        <title>Songito - app</title>
       </Head>
       <props.Component />
     </>

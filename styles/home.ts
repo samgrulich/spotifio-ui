@@ -1,5 +1,5 @@
 export default {
-    title: `font-italic font-bold text(gray-300 md:4xl sm:xl)`,
+    title: `font- font-bold text(gray-300 md:4xl sm:xl)`,
     background: `bg-gray-800`,
     'button-home': `rounded-full bg-green-600 px-5 py-2 font-bold hover:(scale-[1.05]) active:(scale-[0.98]) transition-all`,
 

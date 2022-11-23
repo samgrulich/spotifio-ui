@@ -49,7 +49,6 @@ export default function Playlists({ data }: PageProps<IUser>)
             gap(x(sm:1 md:16 lg:24) y(sm:0 md:16))
           `}></div>
         </div>
-
         <div 
           style="backdrop-filter: blur(12px);"
           class={`
@@ -60,6 +59,10 @@ export default function Playlists({ data }: PageProps<IUser>)
             lg:(translate-x-[25%] w-2/3 rounded-t-lg)
           `}
         >
+          <a href="https://spotify.com">
+            <img class="w-10 absolute left-0 bottom-3 -translate-x-[16vw]" src="spotify/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Green.png" alt="Spotify icon" />
+          </a>
+ 
           <div class="centerx sm:-top-14 md:-top-16 md:scale-[1.4]">
             <a href="/app">
               <Player style="border(solid coolGray-900 1) shadow(md)"/>
@@ -74,7 +77,7 @@ export default function Playlists({ data }: PageProps<IUser>)
               <h1 class={`
                 absoluted -translate-x-1/2 -translate-y-([150%] md:1/2)
                 title
-              `}>Spotifio</h1>
+              `}>Songito</h1>
             </a>
           </div>
 

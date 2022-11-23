@@ -42,7 +42,7 @@ export default function HomePage({ data }: PageProps<PageConfig>)
       <header class="p-2 mb-4">
         <div class="inline-flex">
           <div class={`${style.bubble} z-10`}></div>
-          <span class="title z-20 absolute p-2 top-0 left-0">Brand</span>
+          <span class="title z-20 absolute p-2 top-0 left-0">Songito</span>
         </div>
         <a href={connectURL}>
           <button class="button-home text-black float-right hidden md:block"><Text id="join" config={config} /></button>
@@ -155,7 +155,7 @@ export default function HomePage({ data }: PageProps<PageConfig>)
         </div>
         <div class="flex items-center justify-around w-full mb-2">
           <div>
-            email: support@brand.com <br />
+            email: support@songito.com <br />
             {/* <a href="">Support</a> */}
           </div>
           <span class='bottom-0'><Text id="bottom" config={config}/></span>
@@ -187,7 +187,7 @@ const locale = {
     </>,
     "sec-share-h": "Tell a friend!",
     "sec-share-p": <>
-      Spotifio is the most powerful, when you can share it. So don't forget to tell your friends.
+      Songito is the most powerful, when you can share it. So don't forget to tell your friends.
       That way you can share all your memories together.   
     </>,
     "bottom": <>Made with <span>&#10084;</span>, by Sam</>
@@ -212,7 +212,7 @@ const locale = {
     </>,
     "sec-share-h": "Řekni ostatním!",
     "sec-share-p": <>
-      Spotifio si nejvíce užiješ, když se můžeš podělit s přáteli. Tak jim o nás nezapomeň říct.
+      Songito si nejvíce užiješ, když se můžeš podělit s přáteli. Tak jim o nás nezapomeň říct.
       Takže pak spolu můžete sdílet svoje vzpomínky navzájem.
     </>,
     "bottom": <>Vytvářeno s <span>&#10084;</span>, od Sama</>

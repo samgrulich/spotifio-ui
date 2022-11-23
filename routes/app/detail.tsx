@@ -33,6 +33,9 @@ export default function Detail(props: PageProps)
           <span class='text-gray-900 ml-4 mt-2 mb-3'>{date.toLocaleDateString()}</span>
           <p class='ml-3'>{info.description}</p>
         </div>
+        {/* <a href="https://spotify.com" class="float-right">
+          <img class="w-10" src="/spotify/icons/01_RGB/02_PNG/Spotify_Icon_RGB_Green.png" alt="Spotify icon" />
+        </a> */}
       </div>
       
       <div id="tracksRenderTarget" class='flex w-[120%] -translate-x-[4%] h-full flex-wrap'></div>

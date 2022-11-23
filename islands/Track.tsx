@@ -13,10 +13,10 @@ export default function Track(props: {
   const px = Math.floor(randomValue(3, 5));
   const py = Math.floor(randomValue(3, 5));
 
-  const width = "w([122px] lg:[202px])";
+  const width = "w([122px] md:[172px] lg:[202px])";
   const isPreview = props.track.preview_url;
   const interactible = isPreview ? 'cursor-pointer' : undefined;
-  const grayScale = isPreview ? undefined : 'filter: grayscale(100%) brightness(.2);'
+  const grayScale = isPreview ? undefined : 'filter: grayscale(20%) brightness(.4);'
 
   return (
     <div class={tw(`group-track p-4 md:(px-${px} my-${py})`)}>
@@ -30,8 +30,9 @@ export default function Track(props: {
           absolute left-0 top-[90%] inline z-5 
           text-elipsis truncate 
           font-bold text-2xl 
-          group-track-hover:(untruncate top-0 h-full) 
-          transition-all bg-black`, width)}
+          transition-all bg-black`,
+          "group-track-hover:(untruncate top-0 h-full)",
+          width)}
           data-type="text">{props.track.name}</span>
       </div>
     </div>
